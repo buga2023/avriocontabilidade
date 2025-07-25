@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useContactForm } from '@/hooks/useContactForm';
+import Map from '@/components/ui/Map';
 
 /**
  * Seção de Contato com formulário seguro e informações de contato
@@ -206,15 +207,17 @@ export const ContactSection: React.FC = () => {
               })}
             </div>
 
-            {/* Map Placeholder */}
+            {/* Interactive Map */}
             <Card className="card-professional overflow-hidden">
-              <div className="h-64 bg-muted flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-2" />
-                  <p className="text-muted-foreground">Localização no Mapa</p>
-                  <p className="text-sm text-muted-foreground">Av. Paulista, 1000 - São Paulo/SP</p>
-                </div>
-              </div>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  Nossa Localização
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-0">
+                <Map className="w-full" />
+              </CardContent>
             </Card>
           </div>
         </div>

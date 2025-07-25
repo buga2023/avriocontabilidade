@@ -2,41 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Avrio Contabilidade Design System - Professional accounting theme */
 
 @layer base {
   :root {
+    /* Core brand colors for professional accounting services */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 28% 17%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 28% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 28% 17%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Professional navy blue for trust and reliability */
+    --primary: 215 84% 20%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 215 84% 25%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Warm gray for professional contrast */
+    --secondary: 215 16% 96%;
+    --secondary-foreground: 215 28% 17%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 215 16% 96%;
+    --muted-foreground: 215 13% 54%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Professional teal for highlights */
+    --accent: 187 85% 35%;
+    --accent-foreground: 0 0% 98%;
+    --accent-hover: 187 85% 40%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success: Professional green for positive actions */
+    --success: 142 71% 35%;
+    --success-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --radius: 0.5rem;
+    --border: 215 20% 92%;
+    --input: 215 20% 92%;
+    --ring: 215 84% 20%;
+
+    --radius: 0.75rem;
+
+    /* Professional gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-hover)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+
+    /* Professional shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.1);
+    --shadow-medium: 0 10px 15px -3px hsl(var(--primary) / 0.1);
+    --shadow-large: 0 25px 50px -12px hsl(var(--primary) / 0.15);
+
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-in-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +123,55 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    @apply absolute -top-16 left-4 z-50 px-4 py-2 rounded-md;
+    @apply bg-primary text-primary-foreground;
+    @apply focus:top-4 transition-all duration-300;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-ring outline-offset-2;
+  }
+}
+
+@layer components {
+  /* Professional button variants */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground;
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    @apply shadow-soft hover:shadow-medium focus:ring-2 focus:ring-ring;
+  }
+
+  .btn-accent {
+    @apply bg-accent hover:bg-accent/90 text-accent-foreground;
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    @apply shadow-soft hover:shadow-medium focus:ring-2 focus:ring-ring;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground;
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    @apply focus:ring-2 focus:ring-ring;
+  }
+
+  /* Professional card styles */
+  .card-professional {
+    @apply bg-card border border-border rounded-xl p-6;
+    @apply shadow-soft hover:shadow-medium transition-all duration-300;
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
   }
 }

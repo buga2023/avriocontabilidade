@@ -48,9 +48,9 @@ export const HeroSection: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 lg:px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="flex justify-center items-center">
           {/* Content */}
-          <div className="text-center lg:text-left">
+          <div className="text-center max-w-4xl">
             <h1 
               id="hero-title"
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
@@ -108,22 +108,6 @@ export const HeroSection: React.FC = () => {
                 );
               })}
             </div>
-          </div>
-
-          {/* Hero Image */}
-          <div className="relative order-first lg:order-last">
-            <Suspense fallback={
-              <div className="w-full h-96 bg-white/10 rounded-2xl animate-pulse flex items-center justify-center">
-                <Calculator className="w-16 h-16 text-white/50" />
-              </div>
-            }>
-              <img
-                src="/src/assets/hero-accounting.jpg"
-                alt="Profissionais de contabilidade da Avrio trabalhando com tecnologia moderna"
-                className="w-full h-auto rounded-2xl shadow-large"
-                loading="eager"
-              />
-            </Suspense>
           </div>
         </div>
       </div>

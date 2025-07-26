@@ -17,8 +17,8 @@ const Map: React.FC<MapProps> = ({ className = '' }) => {
   const [isMapLoaded, setIsMapLoaded] = useState(false);
   const [error, setError] = useState<string>('');
 
-  // Coordenadas para São Paulo - Av. Paulista (próximo à localização fornecida)
-  const coordinates: [number, number] = [-46.6562, -23.5613]; // lng, lat para São Paulo
+  // Coordenadas para Salvador/BA - Caminho das Árvores
+  const coordinates: [number, number] = [-38.4769, -12.9794]; // lng, lat para Salvador
   
   const loadMap = () => {
     if (!mapContainer.current || !mapboxToken.trim()) return;
@@ -45,7 +45,7 @@ const Map: React.FC<MapProps> = ({ className = '' }) => {
         .setLngLat(coordinates)
         .setPopup(
           new mapboxgl.Popup({ offset: 25 })
-            .setHTML('<div class="p-2"><strong>Avrio Contabilidade</strong><br>Av. Paulista, 1000<br>São Paulo, SP</div>')
+            .setHTML('<div class="p-2"><strong>Avrio Contabilidade</strong><br>Caminho das Árvores<br>Salvador, BA</div>')
         )
         .addTo(map.current);
 
@@ -135,7 +135,7 @@ const Map: React.FC<MapProps> = ({ className = '' }) => {
           <div className="text-center">
             <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-2" />
             <p className="text-muted-foreground">Mapa será exibido aqui</p>
-            <p className="text-sm text-muted-foreground">Av. Paulista, 1000 - São Paulo/SP</p>
+            <p className="text-sm text-muted-foreground">Caminho das Árvores - Salvador/BA</p>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ export const ContactSection: React.FC = () => {
       icon: Phone,
       title: 'Telefone',
       value: '(11) 3456-7890',
-      description: 'Seg a Sex, 8h às 18h',
+      description: 'Seg a Sex, 8h às 17h',
       href: 'tel:+551134567890'
     },
     {
@@ -31,15 +31,15 @@ export const ContactSection: React.FC = () => {
     {
       icon: MapPin,
       title: 'Endereço',
-      value: 'Av. Paulista, 1000',
-      description: 'São Paulo, SP - CEP 01310-100',
-      href: 'https://maps.google.com'
+      value: 'Caminho das Árvores',
+      description: 'Salvador, BA - CEP 41820-021',
+      href: 'https://maps.app.goo.gl/pFiEbJjWtDZcNHQt5'
     },
     {
       icon: Clock,
       title: 'Horário',
       value: 'Segunda a Sexta',
-      description: '8h às 18h',
+      description: '8h às 17h',
       href: null
     }
   ];

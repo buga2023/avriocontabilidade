@@ -65,7 +65,7 @@ export const ContactSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Form */}
           <Card className="card-professional">
             <CardHeader>
@@ -76,7 +76,7 @@ export const ContactSection: React.FC = () => {
             </CardHeader>
             <CardContent>
               <form onSubmit={submitForm} className="space-y-6" noValidate>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                       Nome Completo *
@@ -169,7 +169,7 @@ export const ContactSection: React.FC = () => {
 
           {/* Contact Info */}
           <div>
-            <div className="grid gap-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6 mb-8">
               {contactInfo.map((info, index) => {
                 const IconComponent = info.icon;
                 const content = (

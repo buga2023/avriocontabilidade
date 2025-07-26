@@ -74,7 +74,7 @@ export const ServicesSection: React.FC = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
@@ -131,7 +131,7 @@ export const ServicesSection: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center bg-secondary rounded-2xl p-12">
+        <div className="text-center bg-secondary rounded-2xl p-6 sm:p-8 lg:p-12">
           <h3 className="text-2xl font-bold text-foreground mb-4">
             Precisa de um Serviço Específico?
           </h3>

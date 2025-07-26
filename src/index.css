@@ -174,4 +174,72 @@
   .bg-gradient-hero {
     background: var(--gradient-hero);
   }
+
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .btn-primary {
+      @apply w-full justify-center text-base py-3 px-6;
+    }
+    
+    .card-professional {
+      @apply p-4 mb-4;
+    }
+    
+    /* Better spacing for mobile */
+    section {
+      @apply py-12;
+    }
+    
+    /* Mobile typography */
+    h1 {
+      @apply text-2xl leading-tight;
+    }
+    
+    h2 {
+      @apply text-xl leading-tight;
+    }
+    
+    h3 {
+      @apply text-lg leading-tight;
+    }
+    
+    p {
+      @apply text-base leading-relaxed;
+    }
+  }
+  
+  /* Touch targets for mobile accessibility */
+  @media (hover: none) and (pointer: coarse) {
+    button, 
+    .clickable,
+    a[role="button"] {
+      @apply min-h-[44px] min-w-[44px];
+    }
+  }
+  
+  /* Prevent horizontal scroll */
+  html, body {
+    @apply overflow-x-hidden;
+  }
+  
+  /* Smooth scrolling for all anchors */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Mobile-first grid improvements */
+  @media (max-width: 768px) {
+    .grid {
+      @apply gap-4;
+    }
+    
+    .grid > * {
+      @apply w-full;
+    }
+  }
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface HeaderProps {
@@ -18,8 +18,6 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   const menuItems = [
     { id: 'home', label: 'Início', href: '#home' },
     { id: 'services', label: 'Serviços', href: '#services' },
-    { id: 'plans', label: 'Planos', href: '#plans' },
-    { id: 'about', label: 'Sobre', href: '#about' },
     { id: 'contact', label: 'Contato', href: '#contact' }
   ];
 
@@ -68,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           {/* Logo */}
           <a 
             href="#home" 
-            className="text-2xl lg:text-3xl font-bold text-primary hover:text-primary-hover transition-colors"
+            className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary hover:text-primary-hover transition-colors"
             aria-label="Avrio Contabilidade - Página inicial"
           >
             Avrio
@@ -141,16 +139,31 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 </li>
               ))}
             </ul>
-            <div className="mt-4 px-4">
+            <div className="mt-4 px-4 space-y-3">
+              {/* Mobile Contact Info */}
+              <a 
+                href="tel:+557139011293" 
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-2"
+              >
+                <Phone className="w-4 h-4" />
+                (71) 3901-1293
+              </a>
+              <a 
+                href="mailto:contato@avrio.com.br" 
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-2"
+              >
+                <Mail className="w-4 h-4" />
+                contato@avrio.com.br
+              </a>
               <Button 
                 variant="default"
-                className="btn-primary w-full"
+                className="btn-primary w-full mt-3"
                 onClick={() => {
                   handleMenuItemClick();
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Fale Conosco
+                Solicitar Contato
               </Button>
             </div>
           </div>

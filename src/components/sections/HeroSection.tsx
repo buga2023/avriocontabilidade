@@ -53,7 +53,7 @@ export const HeroSection: React.FC = () => {
           <div className="text-center max-w-4xl">
             <h1 
               id="hero-title"
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
             >
               Contabilidade que{' '}
               <span className="text-accent-foreground bg-accent px-3 py-1 rounded-lg inline-block">
@@ -62,14 +62,14 @@ export const HeroSection: React.FC = () => {
               seu Negócio
             </h1>
             
-            <p className="text-xl text-white/90 mb-8 max-w-2xl">
+            <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto px-4 sm:px-0">
               Especialistas em soluções contábeis para empresas que buscam crescimento 
               sustentável e conformidade fiscal completa.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button 
+            <div className="flex flex-col sm:flex-row gap-4 mb-12 px-4 sm:px-0">
+              <Button
                 size="lg"
                 className="bg-accent hover:bg-accent-hover text-accent-foreground px-8 py-4 text-lg"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -89,7 +89,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Benefits Grid */}
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 sm:px-0">
               {benefits.map((benefit, index) => {
                 const IconComponent = benefit.icon;
                 return (

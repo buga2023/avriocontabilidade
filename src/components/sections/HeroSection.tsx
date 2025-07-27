@@ -69,6 +69,15 @@ export const HeroSection: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12 px-4 sm:px-0">
+              <Button 
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold"
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Nossos Serviços
+              </Button>
+              
               <Button
                 size="lg"
                 className="bg-accent hover:bg-accent-hover text-accent-foreground px-8 py-4 text-lg"
@@ -76,15 +85,6 @@ export const HeroSection: React.FC = () => {
               >
                 Solicitar Proposta
                 <ArrowRight className="ml-2 w-5 h-5" aria-hidden="true" />
-              </Button>
-              
-              <Button 
-                variant="outline"
-                size="lg"
-                className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg"
-                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Nossos Serviços
               </Button>
             </div>
 

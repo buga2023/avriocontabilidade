@@ -13,32 +13,6 @@ const Map: React.FC<MapProps> = ({ className = '' }) => {
 
   return (
     <div className={`space-y-4 ${className}`}>
-      {/* Mapa Incorporado */}
-      <div className="relative w-full h-64 bg-muted rounded-lg overflow-hidden">
-        <iframe
-          src={embedUrl}
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="absolute inset-0"
-          title="Localização Avrio Contabilidade - Caminho das Árvores, Salvador/BA"
-          onError={() => {
-            console.log('Erro ao carregar mapa embed');
-          }}
-        />
-        
-        {/* Fallback se o mapa não carregar */}
-        <div className="absolute inset-0 flex items-center justify-center bg-muted pointer-events-none">
-          <div className="text-center opacity-50">
-            <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-2" />
-            <p className="text-muted-foreground text-sm">Carregando mapa...</p>
-          </div>
-        </div>
-      </div>
-
       {/* Informações e Botões */}
       <div className="space-y-3">
         <div className="text-center">

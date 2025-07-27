@@ -69,15 +69,6 @@ export const HeroSection: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12 px-4 sm:px-0">
-              <Button 
-                variant="outline"
-                size="lg"
-                className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold"
-                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Nossos Serviços
-              </Button>
-              
               <Button
                 size="lg"
                 className="bg-accent hover:bg-accent-hover text-accent-foreground px-8 py-4 text-lg"
@@ -86,18 +77,25 @@ export const HeroSection: React.FC = () => {
                 Solicitar Proposta
                 <ArrowRight className="ml-2 w-5 h-5" aria-hidden="true" />
               </Button>
+              
+              <Button 
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg"
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Nossos Serviços
+              </Button>
             </div>
 
             {/* Benefits Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 sm:px-0 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 sm:px-0">
               {benefits.map((benefit, index) => {
                 const IconComponent = benefit.icon;
                 return (
                   <div 
                     key={index}
                     className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
                   >
                     <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="w-6 h-6 text-accent-foreground" aria-hidden="true" />
@@ -107,40 +105,6 @@ export const HeroSection: React.FC = () => {
                   </div>
                 );
               })}
-            </div>
-
-            {/* Services Preview */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
-              <h2 className="text-2xl font-bold text-white mb-6 text-center">
-                Principais Serviços
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div className="bg-white/10 rounded-lg p-4 text-center">
-                  <Calculator className="w-8 h-8 text-accent mx-auto mb-2" />
-                  <h3 className="font-semibold text-white text-sm mb-1">Contabilidade Geral</h3>
-                  <p className="text-white/70 text-xs">Escrituração completa e demonstrações</p>
-                </div>
-                <div className="bg-white/10 rounded-lg p-4 text-center">
-                  <TrendingUp className="w-8 h-8 text-accent mx-auto mb-2" />
-                  <h3 className="font-semibold text-white text-sm mb-1">Gestão Fiscal</h3>
-                  <p className="text-white/70 text-xs">Planejamento tributário estratégico</p>
-                </div>
-                <div className="bg-white/10 rounded-lg p-4 text-center sm:col-span-2 lg:col-span-1">
-                  <Shield className="w-8 h-8 text-accent mx-auto mb-2" />
-                  <h3 className="font-semibold text-white text-sm mb-1">Consultoria</h3>
-                  <p className="text-white/70 text-xs">Orientação para crescimento</p>
-                </div>
-              </div>
-              <div className="text-center mt-6">
-                <Button 
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-primary"
-                  onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Ver Todos os Serviços
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </div>
             </div>
           </div>
         </div>

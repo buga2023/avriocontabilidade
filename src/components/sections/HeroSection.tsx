@@ -68,7 +68,7 @@ export const HeroSection: React.FC = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12 px-4 sm:px-0">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12 px-4 sm:px-0 justify-center">
               <Button
                 size="lg"
                 className="bg-accent hover:bg-accent-hover text-accent-foreground px-8 py-4 text-lg"

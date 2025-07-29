@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import avrioLogo from '@/assets/avrio-logo.png';
 
 interface HeaderProps {
   className?: string;
@@ -66,9 +67,14 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           {/* Logo */}
           <a 
             href="#home" 
-            className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary hover:text-primary-hover transition-colors"
+            className="flex items-center gap-2 text-xl sm:text-2xl lg:text-3xl font-bold text-primary hover:text-primary-hover transition-colors"
             aria-label="Avrio Contabilidade - Página inicial"
           >
+            <img 
+              src={avrioLogo} 
+              alt="Logo Avrio" 
+              className="w-8 h-8 sm:w-10 sm:h-10"
+            />
             Avrio
           </a>
 

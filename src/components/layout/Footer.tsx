@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
     {
       icon: Instagram,
       label: 'Instagram',
-      href: 'https://instagram.com/avrio',
+      href: 'https://www.instagram.com/avriosolucoes/',
       ariaLabel: 'Siga-nos no Instagram'
     },
     {

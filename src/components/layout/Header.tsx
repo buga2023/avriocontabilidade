@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import avrioLogo from '@/assets/avrio-logo.png';
+import avrioLogo from '@/assets/avrio-logo-premium.png';
 
 interface HeaderProps {
   className?: string;

@@ -24,9 +24,9 @@ export const ContactSection: React.FC = () => {
     {
       icon: Mail,
       title: 'E-mail',
-      value: 'contato@avrio.com.br',
+      value: 'atendimento@avrio.com.br',
       description: 'Respondemos em até 2h',
-      href: 'mailto:contato@avrio.com.br'
+      href: 'mailto:atendimento@avrio.com.br'
     },
     {
       icon: MapPin,

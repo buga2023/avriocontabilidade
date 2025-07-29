@@ -21,8 +21,8 @@ export const Footer: React.FC = () => {
     {
       icon: Mail,
       label: 'E-mail',
-      value: 'contato@avrio.com.br',
-      href: 'mailto:contato@avrio.com.br'
+      value: 'atendimento@avrio.com.br',
+      href: 'mailto:atendimento@avrio.com.br'
     },
     {
       icon: MapPin,

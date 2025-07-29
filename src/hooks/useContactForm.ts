@@ -58,8 +58,8 @@ export const useContactForm = () => {
       // Validação e sanitização
       const validatedData = validateAndSanitizeContactForm(formData);
 
-      // Aqui você faria a chamada para sua API
-      // await apiService.submitContact(validatedData);
+      // Simulação de envio de email para atendimento@avrio.com.br
+      console.log('Enviando mensagem para: atendimento@avrio.com.br', validatedData);
       
       toast({
         title: "Mensagem enviada!",

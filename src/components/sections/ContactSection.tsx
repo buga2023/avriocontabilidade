@@ -17,9 +17,9 @@ export const ContactSection: React.FC = () => {
     {
       icon: Phone,
       title: 'Telefone',
-      value: '(11) 3456-7890',
+      value: '(71) 3456-7890',
       description: 'Seg a Sex, 8h às 17h',
-      href: 'tel:+551134567890'
+      href: 'tel:+557134567890'
     },
     {
       icon: Mail,

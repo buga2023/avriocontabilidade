@@ -15,8 +15,8 @@ export const Footer: React.FC = () => {
     {
       icon: Phone,
       label: 'Telefone',
-      value: '(11) 3456-7890',
-      href: 'tel:+551134567890'
+      value: '(71) 3456-7890',
+      href: 'tel:+557134567890'
     },
     {
       icon: Mail,
@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
     {
       icon: MapPin,
       label: 'Endereço',
-      value: 'São Paulo, SP - Brasil',
+      value: 'Salvador, BA - Brasil',
       href: 'https://maps.google.com'
     }
   ];
@@ -194,7 +194,7 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} Avrio Contabilidade. Todos os direitos reservados.
           </p>
           <p className="mt-1">
-            CNPJ: 12.345.678/0001-90 | CRC: SP-123456/O-7
+            CNPJ: 12.345.678/0001-90 | CRC: BA-123456/O-7
           </p>
         </div>
       </div>

@@ -33,7 +33,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section 
       id="home"
-      className="relative min-h-screen flex items-center bg-gradient-hero overflow-hidden"
+      className="relative min-h-screen flex items-center bg-background overflow-hidden"
       role="banner"
       aria-labelledby="hero-title"
     >
@@ -53,7 +53,7 @@ export const HeroSection: React.FC = () => {
           <div className="text-center max-w-4xl">
             <h1 
               id="hero-title"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight"
             >
               Contabilidade que{' '}
               <span className="text-accent-foreground bg-accent px-3 py-1 rounded-lg inline-block">
@@ -62,7 +62,7 @@ export const HeroSection: React.FC = () => {
               seu Negócio
             </h1>
             
-            <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto px-4 sm:px-0">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto px-4 sm:px-0">
               Especialistas em soluções contábeis para empresas que buscam crescimento 
               sustentável e conformidade fiscal completa.
             </p>
@@ -80,7 +80,7 @@ export const HeroSection: React.FC = () => {
               
               <Button 
                 size="lg"
-                className="bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg"
+                className="bg-secondary text-primary hover:bg-secondary/90 px-8 py-4 text-lg border border-border"
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Nossos Serviços
@@ -94,13 +94,13 @@ export const HeroSection: React.FC = () => {
                 return (
                   <div 
                     key={index}
-                    className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center"
+                    className="bg-secondary backdrop-blur-sm rounded-xl p-6 text-center border border-border"
                   >
                     <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="w-6 h-6 text-accent-foreground" aria-hidden="true" />
                     </div>
-                    <h3 className="font-semibold text-white mb-2">{benefit.title}</h3>
-                    <p className="text-white/80 text-sm">{benefit.description}</p>
+                    <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
+                    <p className="text-muted-foreground text-sm">{benefit.description}</p>
                   </div>
                 );
               })}

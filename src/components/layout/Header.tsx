@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import avrioLogo from '@/assets/avrio-logo-premium.png';
+import avrioLogo from '@/assets/avrio-logo-official.png';
 
 interface HeaderProps {
   className?: string;
@@ -72,10 +72,9 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           >
             <img 
               src={avrioLogo} 
-              alt="Logo Avrio" 
-              className="w-8 h-8 sm:w-10 sm:h-10"
+              alt="Logo Avrio Soluções Corporativas" 
+              className="h-8 sm:h-10 w-auto"
             />
-            Avrio
           </a>
 
           {/* Menu Desktop */}

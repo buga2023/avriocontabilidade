@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useContactForm } from '@/hooks/useContactForm';
 import Map from '@/components/ui/Map';
+import specialistImage from '@/assets/specialist-contact.jpg';
 
 /**
  * Seção de Contato com formulário seguro e informações de contato
@@ -45,42 +46,48 @@ export const ContactSection: React.FC = () => {
   ];
 
   return (
-    <section 
-      id="contact" 
-      className="py-20 bg-secondary/30"
-      aria-labelledby="contact-title"
-    >
-      <div className="container mx-auto px-4 lg:px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 
-            id="contact-title"
-            className="text-3xl lg:text-4xl font-bold text-foreground mb-4"
-          >
-            Entre em Contato
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Estamos prontos para atender sua empresa com soluções contábeis personalizadas. 
-            Entre em contato e solicite uma proposta.
-          </p>
-        </div>
+    <>
+      {/* Hero Contact Section - Based on provided image */}
+      <section 
+        id="contact" 
+        className="py-20 bg-background"
+        aria-labelledby="contact-title"
+      >
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Specialist */}
+            <div className="text-center lg:text-left">
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8">
+                Fale com um Especialista!
+              </h2>
+              
+              <div className="flex justify-center lg:justify-start mb-8">
+                <div className="relative">
+                  <div className="w-64 h-64 rounded-full bg-accent p-4">
+                    <img 
+                      src={specialistImage}
+                      alt="Especialista em contabilidade"
+                      className="w-full h-full rounded-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              
+              <p className="text-xl lg:text-2xl font-semibold text-foreground">
+                Estamos aqui para ajudá-lo.
+              </p>
+            </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Contact Form */}
-          <Card className="card-professional">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Send className="w-5 h-5 text-primary" aria-hidden="true" />
-                Envie sua Mensagem
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={submitForm} className="space-y-6" noValidate>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Right Side - Contact Form */}
+            <Card className="card-professional">
+              <CardHeader>
+                <CardTitle className="text-xl font-bold text-center">
+                  ENVIE SUA MENSAGEM
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={submitForm} className="space-y-6" noValidate>
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Nome Completo *
-                    </label>
                     <Input
                       id="name"
                       name="name"
@@ -88,16 +95,32 @@ export const ContactSection: React.FC = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full"
-                      placeholder="Seu nome completo"
-                      aria-describedby="name-error"
+                      className="w-full border-0 border-b-2 border-border rounded-none bg-transparent px-0 py-3 focus:border-accent"
+                      placeholder="Nome:"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      E-mail *
-                    </label>
+                    <Input
+                      id="company"
+                      name="company"
+                      type="text"
+                      className="w-full border-0 border-b-2 border-border rounded-none bg-transparent px-0 py-3 focus:border-accent"
+                      placeholder="Nome da empresa:"
+                    />
+                  </div>
+
+                  <div>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      className="w-full border-0 border-b-2 border-border rounded-none bg-transparent px-0 py-3 focus:border-accent"
+                      placeholder="Telefone:"
+                    />
+                  </div>
+                  
+                  <div>
                     <Input
                       id="email"
                       name="email"
@@ -105,68 +128,51 @@ export const ContactSection: React.FC = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full"
-                      placeholder="seu@email.com"
-                      aria-describedby="email-error"
+                      className="w-full border-0 border-b-2 border-border rounded-none bg-transparent px-0 py-3 focus:border-accent"
+                      placeholder="Email:"
                     />
                   </div>
-                </div>
 
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                    Empresa
-                  </label>
-                  <Input
-                    id="company"
-                    name="company"
-                    type="text"
-                    className="w-full"
-                    placeholder="Nome da sua empresa"
-                  />
-                </div>
+                  <div>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                      rows={4}
+                      className="w-full border-0 border-b-2 border-border rounded-none bg-transparent px-0 py-3 resize-none focus:border-accent"
+                      placeholder="Mensagem:"
+                    />
+                  </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Mensagem *
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={4}
-                    className="w-full resize-none"
-                    placeholder="Conte-nos sobre suas necessidades contábeis..."
-                    aria-describedby="message-error"
-                  />
-                </div>
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-accent hover:bg-accent-hover text-accent-foreground py-4 text-lg font-semibold"
+                  >
+                    {isSubmitting ? 'Enviando...' : 'ENVIAR'}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
 
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="btn-primary w-full"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-4 h-4 border-2 border-primary-foreground/20 border-t-primary-foreground rounded-full animate-spin mr-2" />
-                      Enviando...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4 mr-2" aria-hidden="true" />
-                      Enviar Mensagem
-                    </>
-                  )}
-                </Button>
-
-                <p className="text-xs text-muted-foreground">
-                  * Campos obrigatórios. Seus dados estão protegidos pela nossa política de privacidade.
-                </p>
-              </form>
-            </CardContent>
-          </Card>
-
+      {/* Detailed Contact Section */}
+      <section className="py-20 bg-secondary/30">
+        <div className="container mx-auto px-4 lg:px-6">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Outras Formas de Contato
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Estamos prontos para atender sua empresa com soluções contábeis personalizadas.
+            </p>
+          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Info */}
           <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6 mb-8">
@@ -206,8 +212,10 @@ export const ContactSection: React.FC = () => {
                 ) : content;
               })}
             </div>
+          </div>
 
-            {/* Interactive Map */}
+          {/* Interactive Map */}
+          <div>
             <Card className="card-professional overflow-hidden">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -223,5 +231,6 @@ export const ContactSection: React.FC = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };

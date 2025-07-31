@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 import secaoFiscalImage from '@/assets/secao_fiscal.png';
 import secaoPessoasImage from '@/assets/secao_pessoas.png';
 import secaoContabilImage from '@/assets/secao_contabil.png';
-import avrioLogo from '@/assets/avrio-logo-new.png';
+
 
 /**
  * Seção de Vantagens dos Departamentos
@@ -76,14 +76,6 @@ export const AdvantagesSection: React.FC = () => {
                         background: 'rgba(0, 51, 102, 0.2)' 
                       }}
                     />
-                    {/* Logo */}
-                    <div className="absolute bottom-4 right-4">
-                      <img
-                        src={avrioLogo}
-                        alt="Ávrio Soluções Corporativas"
-                        className="w-[120px] h-[60px] object-contain"
-                      />
-                    </div>
                   </div>
                 </Card>
               </div>

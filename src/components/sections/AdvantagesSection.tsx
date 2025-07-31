@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 import secaoFiscalImage from '@/assets/secao_fiscal.png';
 import secaoPessoasImage from '@/assets/secao_pessoas.png';
 import secaoContabilImage from '@/assets/secao_contabil.png';
-import avrioLogo from '@/assets/avrio-logo.png';
+import avrioLogo from '@/assets/avrio-logo-new.png';
 
 /**
  * Seção de Vantagens dos Departamentos

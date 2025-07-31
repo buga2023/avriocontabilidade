@@ -16,6 +16,9 @@ const ContactSection = React.lazy(() =>
 const AdvantagesSection = React.lazy(() => 
   import('@/components/sections/AdvantagesSection').then(module => ({ default: module.AdvantagesSection }))
 );
+const ClientsSection = React.lazy(() => 
+  import('@/components/sections/ClientsSection').then(module => ({ default: module.ClientsSection }))
+);
 
 /**
  * Componente principal da aplicação - Avrio Contabilidade
@@ -88,6 +91,14 @@ const Index: React.FC = () => {
           </div>
         }>
           <AdvantagesSection />
+        </Suspense>
+
+        <Suspense fallback={
+          <div className="py-20 flex justify-center">
+            <div className="w-8 h-8 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
+          </div>
+        }>
+          <ClientsSection />
         </Suspense>
 
         <Suspense fallback={

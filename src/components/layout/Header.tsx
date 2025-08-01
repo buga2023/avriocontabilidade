@@ -71,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             aria-label="Avrio Contabilidade - Página inicial"
           >
             <img 
-              src="/lovable-uploads/76207679-72ea-430b-be37-47b0464d6a60.png" 
+              src="/lovable-uploads/7871d2a0-5ef3-41ee-926f-2913ebdd5c2b.png" 
               alt="Logo Avrio Soluções Corporativas" 
               className="h-8 sm:h-10 w-auto"
             />

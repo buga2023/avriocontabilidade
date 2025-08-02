@@ -212,10 +212,10 @@ export const ContactSection: React.FC = () => {
               Estamos prontos para atender sua empresa com soluções contábeis personalizadas.
             </p>
           </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 lg:gap-12">
           {/* Contact Info */}
-          <div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6 mb-8">
+          <div className="xl:col-span-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-4 lg:gap-6 mb-8">
               {contactInfo.map((info, index) => {
                 const IconComponent = info.icon;
                 const content = (
@@ -254,17 +254,54 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Interactive Map */}
-          <div>
-            <Card className="card-professional overflow-hidden">
+          {/* Interactive Map - Expanded */}
+          <div className="xl:col-span-2">
+            <Card className="card-professional overflow-hidden h-full">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-primary" />
+                <CardTitle className="flex items-center gap-2 text-xl">
+                  <MapPin className="w-6 h-6 text-primary" />
                   Nossa Localização
                 </CardTitle>
+                <p className="text-muted-foreground">
+                  Estamos localizados no coração de Salvador, em uma das regiões mais acessíveis da cidade.
+                </p>
               </CardHeader>
-              <CardContent className="p-0">
-                <Map className="w-full" />
+              <CardContent className="p-0 h-[500px] relative">
+                {/* Google Maps Embed */}
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.659!2d-38.4791!3d-12.9794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71604d0a9ca42a5%3A0xce9e4c85b5cfc706!2sCaminho%20das%20%C3%81rvores%2C%20Salvador%20-%20BA!5e0!3m2!1spt!2sbr!4v1700000000000!5m2!1spt!2sbr"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Localização da Avrio Contabilidade"
+                  className="rounded-b-lg"
+                />
+                
+                {/* Action Buttons Overlay */}
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="flex flex-col sm:flex-row gap-2 bg-background/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+                    <Button
+                      onClick={() => window.open('https://maps.app.goo.gl/pFiEbJjWtDZcNHQt5', '_blank')}
+                      className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
+                      size="sm"
+                    >
+                      <MapPin className="w-4 h-4 mr-2" />
+                      Abrir no Google Maps
+                    </Button>
+                    
+                    <Button
+                      onClick={() => window.open('https://www.google.com/maps/dir//Caminho+das+Árvores,+Salvador+-+BA', '_blank')}
+                      variant="outline"
+                      className="flex-1"
+                      size="sm"
+                    >
+                      Ver Rotas
+                    </Button>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>

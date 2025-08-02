@@ -254,9 +254,9 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Interactive Map - Expanded */}
+          {/* Location Info - Expanded */}
           <div className="xl:col-span-2">
-            <Card className="card-professional overflow-hidden h-full">
+            <Card className="card-professional h-full">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-xl">
                   <MapPin className="w-6 h-6 text-primary" />
@@ -266,40 +266,94 @@ export const ContactSection: React.FC = () => {
                   Estamos localizados no coração de Salvador, em uma das regiões mais acessíveis da cidade.
                 </p>
               </CardHeader>
-              <CardContent className="p-0 h-[500px] relative">
-                {/* Google Maps Embed */}
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.4823958089855!2d-38.47916672517094!3d-12.982770658756474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71604b7c8f1da97%3A0x9c6c3e9ea0e4a7a7!2sCaminho%20das%20%C3%81rvores%2C%20Salvador%20-%20BA!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
-                  width="100%"
-                  height="400"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Localização da Avrio Contabilidade"
-                  className="rounded-b-lg"
-                />
-                
-                {/* Action Buttons Overlay */}
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="flex flex-col sm:flex-row gap-2 bg-background/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
-                    <Button
-                      onClick={() => window.open('https://maps.app.goo.gl/pFiEbJjWtDZcNHQt5', '_blank')}
-                      className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
-                      size="sm"
-                    >
-                      <MapPin className="w-4 h-4 mr-2" />
-                      Abrir no Google Maps
-                    </Button>
-                    
-                    <Button
-                      onClick={() => window.open('https://www.google.com/maps/dir//Caminho+das+Árvores,+Salvador+-+BA', '_blank')}
-                      variant="outline"
-                      className="flex-1"
-                      size="sm"
-                    >
-                      Ver Rotas
-                    </Button>
+              <CardContent className="space-y-6">
+                {/* Endereço Completo */}
+                <div className="bg-accent/5 p-6 rounded-lg border border-accent/20">
+                  <h3 className="font-semibold text-foreground mb-3 text-lg">Endereço Completo</h3>
+                  <div className="space-y-2">
+                    <p className="text-foreground">Caminho das Árvores, Salvador, BA</p>
+                    <p className="text-muted-foreground">CEP: 41820-021</p>
+                    <p className="text-muted-foreground">Região: Caminho das Árvores</p>
+                    <p className="text-muted-foreground">Bairro: Salvador</p>
+                  </div>
+                </div>
+
+                {/* Pontos de Referência */}
+                <div className="bg-secondary/20 p-6 rounded-lg">
+                  <h3 className="font-semibold text-foreground mb-3 text-lg">Pontos de Referência</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="font-medium text-foreground">Shopping Iguatemi</p>
+                        <p className="text-sm text-muted-foreground">5 minutos de distância</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="font-medium text-foreground">Salvador Shopping</p>
+                        <p className="text-sm text-muted-foreground">10 minutos de distância</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="font-medium text-foreground">Av. Tancredo Neves</p>
+                        <p className="text-sm text-muted-foreground">Fácil acesso</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="font-medium text-foreground">Estacionamento</p>
+                        <p className="text-sm text-muted-foreground">Disponível no local</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Botões de Ação */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button
+                    onClick={() => window.open('https://maps.app.goo.gl/pFiEbJjWtDZcNHQt5', '_blank')}
+                    className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Abrir no Google Maps
+                  </Button>
+                  
+                  <Button
+                    onClick={() => window.open('https://www.google.com/maps/dir//Caminho+das+Árvores,+Salvador+-+BA', '_blank')}
+                    variant="outline"
+                    className="flex-1"
+                  >
+                    Ver Rotas
+                  </Button>
+                </div>
+
+                {/* Informações de Transporte */}
+                <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
+                  <h3 className="font-semibold text-foreground mb-3 text-lg">Como Chegar</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-xs font-bold text-primary">🚗</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">De Carro</p>
+                        <p className="text-sm text-muted-foreground">Acesso fácil pela Av. Tancredo Neves</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-xs font-bold text-primary">🚌</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">Transporte Público</p>
+                        <p className="text-sm text-muted-foreground">Várias linhas de ônibus passam pela região</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </CardContent>

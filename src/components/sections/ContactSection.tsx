@@ -1,9 +1,10 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, Star, Quote } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { useContactForm } from '@/hooks/useContactForm';
 import Map from '@/components/ui/Map';
 import specialistImage from '@/assets/specialist-contact.jpg';
@@ -42,6 +43,45 @@ export const ContactSection: React.FC = () => {
       value: 'Segunda a Sexta',
       description: '8h às 17h',
       href: null
+    }
+  ];
+
+  const clientReviews = [
+    {
+      id: 1,
+      name: 'Maria Silva',
+      company: 'TechCorp Soluções',
+      role: 'CEO',
+      rating: 5,
+      comment: 'A Avrio transformou completamente nossa gestão contábil. Profissionais excepcionais e atendimento de primeira qualidade.',
+      avatar: 'MS'
+    },
+    {
+      id: 2,
+      name: 'João Santos',
+      company: 'Global Comércio',
+      role: 'Diretor Financeiro',
+      rating: 5,
+      comment: 'Excelente assessoria fiscal e tributária. Conseguimos reduzir significativamente nossos custos com impostos.',
+      avatar: 'JS'
+    },
+    {
+      id: 3,
+      name: 'Ana Costa',
+      company: 'Prime Consultoria',
+      role: 'Sócia',
+      rating: 5,
+      comment: 'Equipe técnica muito competente e sempre disponível. Recomendo a todos os empresários.',
+      avatar: 'AC'
+    },
+    {
+      id: 4,
+      name: 'Carlos Oliveira',
+      company: 'Innovate Solutions',
+      role: 'Gerente',
+      rating: 5,
+      comment: 'Serviço de folha de pagamento impecável. Nunca tivemos problemas desde que começamos a trabalhar com a Avrio.',
+      avatar: 'CO'
     }
   ];
 
@@ -228,6 +268,85 @@ export const ContactSection: React.FC = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Reviews Section */}
+    <section className="py-20 bg-background">
+      <div className="container mx-auto px-4 lg:px-6">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            O Que Nossos Clientes Dizem
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Veja os depoimentos de empresários que confiam na Avrio para suas necessidades contábeis.
+          </p>
+        </div>
+
+        {/* Reviews Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {clientReviews.map((review, index) => (
+            <Card 
+              key={review.id}
+              className="card-professional relative overflow-hidden group hover:shadow-lg transition-shadow"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <CardContent className="p-6">
+                {/* Quote Icon */}
+                <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <Quote className="w-8 h-8 text-primary" />
+                </div>
+
+                {/* Rating Stars */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star 
+                      key={i}
+                      className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                      aria-hidden="true"
+                    />
+                  ))}
+                </div>
+
+                {/* Review Text */}
+                <blockquote className="text-foreground mb-6 italic leading-relaxed">
+                  "{review.comment}"
+                </blockquote>
+
+                {/* Client Info */}
+                <div className="flex items-center gap-4">
+                  <Avatar className="h-12 w-12">
+                    <AvatarImage src="" alt={review.name} />
+                    <AvatarFallback className="bg-primary/10 text-primary font-semibold">
+                      {review.avatar}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <div className="font-semibold text-foreground">{review.name}</div>
+                    <div className="text-sm text-muted-foreground">{review.role}</div>
+                    <div className="text-sm text-primary font-medium">{review.company}</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-12">
+          <p className="text-lg text-muted-foreground mb-6">
+            Junte-se aos nossos clientes satisfeitos
+          </p>
+          <Button 
+            size="lg"
+            className="bg-primary hover:bg-primary-hover text-primary-foreground px-8 py-3"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Fale Conosco
+          </Button>
         </div>
       </div>
     </section>

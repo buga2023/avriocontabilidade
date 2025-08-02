@@ -82,7 +82,7 @@ const Index: React.FC = () => {
             <div className="w-8 h-8 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
           </div>
         }>
-          <ServicesSection />
+          <AdvantagesSection />
         </Suspense>
 
         <Suspense fallback={
@@ -90,7 +90,7 @@ const Index: React.FC = () => {
             <div className="w-8 h-8 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
           </div>
         }>
-          <AdvantagesSection />
+          <ServicesSection />
         </Suspense>
 
         <Suspense fallback={

@@ -19,9 +19,6 @@ const AdvantagesSection = React.lazy(() =>
 const ClientsSection = React.lazy(() => 
   import('@/components/sections/ClientsSection').then(module => ({ default: module.ClientsSection }))
 );
-const TestimonialsSection = React.lazy(() => 
-  import('@/components/sections/TestimonialsSection').then(module => ({ default: module.TestimonialsSection }))
-);
 
 /**
  * Componente principal da aplicação - Avrio Contabilidade
@@ -102,14 +99,6 @@ const Index: React.FC = () => {
           </div>
         }>
           <ClientsSection />
-        </Suspense>
-
-        <Suspense fallback={
-          <div className="py-20 flex justify-center">
-            <div className="w-8 h-8 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
-          </div>
-        }>
-          <TestimonialsSection />
         </Suspense>
 
         <Suspense fallback={

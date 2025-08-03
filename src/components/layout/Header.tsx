@@ -73,7 +73,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             <img 
               src="/lovable-uploads/911f61fb-5c56-4f0e-aa6b-f46e44c69724.png" 
               alt="Logo Avrio Soluções Corporativas" 
-              className="h-8 sm:h-10 w-auto"
+              className="h-12 sm:h-14 lg:h-16 w-auto"
             />
           </a>
 

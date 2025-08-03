@@ -142,7 +142,7 @@ export const ServicesSection: React.FC = () => {
           <Button 
             size="lg"
             className="btn-primary"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar uma consultoria sobre os serviços contábeis da Ávrio.', '_blank')}
           >
             Solicitar Consultoria
           </Button>

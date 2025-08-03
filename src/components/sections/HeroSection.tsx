@@ -72,7 +72,7 @@ export const HeroSection: React.FC = () => {
               <Button
                 size="lg"
                 className="bg-accent hover:bg-accent-hover text-accent-foreground px-8 py-4 text-lg"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar uma proposta para os serviços contábeis da Ávrio.', '_blank')}
               >
                 Solicitar Proposta
                 <ArrowRight className="ml-2 w-5 h-5" aria-hidden="true" />

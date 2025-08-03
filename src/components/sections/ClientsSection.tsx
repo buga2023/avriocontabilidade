@@ -96,7 +96,7 @@ export const ClientsSection: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar uma proposta para os serviços contábeis da Ávrio.', '_blank')}
                 className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary-hover transition-colors font-medium"
               >
                 Solicitar Proposta

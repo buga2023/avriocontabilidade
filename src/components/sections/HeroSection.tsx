@@ -80,6 +80,15 @@ export const HeroSection: React.FC = () => {
               
               <Button 
                 size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg"
+                onClick={() => window.open('https://seu-dominio.com/abertura-gratis', '_blank')}
+              >
+                Abrir Sua Empresa
+                <ArrowRight className="ml-2 w-5 h-5" aria-hidden="true" />
+              </Button>
+              
+              <Button 
+                size="lg"
                 className="bg-secondary text-primary hover:bg-secondary/90 px-8 py-4 text-lg border border-border"
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               >

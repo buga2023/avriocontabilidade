@@ -93,8 +93,15 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             ))}
           </ul>
 
-          {/* CTA Button Desktop */}
-          <div className="hidden md:block">
+          {/* CTA Buttons Desktop */}
+          <div className="hidden md:flex items-center gap-3">
+            <Button 
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              onClick={() => window.open('https://seu-dominio.com/plataforma', '_blank')}
+            >
+              Plataforma do Cliente
+            </Button>
             <Button 
               variant="default"
               className="btn-primary"
@@ -161,8 +168,18 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 contato@avrio.com.br
               </a>
               <Button 
+                variant="outline"
+                className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                onClick={() => {
+                  handleMenuItemClick();
+                  window.open('https://seu-dominio.com/plataforma', '_blank');
+                }}
+              >
+                Plataforma do Cliente
+              </Button>
+              <Button 
                 variant="default"
-                className="btn-primary w-full mt-3"
+                className="btn-primary w-full"
                 onClick={() => {
                   handleMenuItemClick();
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });

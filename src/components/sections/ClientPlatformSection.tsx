@@ -66,7 +66,7 @@ const ClientPlatformSection = () => {
                   <div className="w-3 h-3 bg-primary rounded-full"></div>
                   <span className="text-foreground font-medium">Suporte especializado</span>
                 </div>
-                <div className="flex items-center justify-center space-x-3 bg-secondary/20 p-4 rounded-xl border border-secondary/20">
+                <div className="flex items-center justify-center space-x-3 bg-secondary/20 p-4 rounded-xl border-2 border-secondary">
                   <div className="w-3 h-3 bg-secondary rounded-full"></div>
                   <span className="text-foreground font-medium">Documentação completa</span>
                 </div>

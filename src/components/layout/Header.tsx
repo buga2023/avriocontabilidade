@@ -98,7 +98,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             <Button 
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              onClick={() => window.open('https://seu-dominio.com/plataforma', '_blank')}
+              onClick={() => window.open('https://onvio.com.br', '_blank')}
             >
               Plataforma do Cliente
             </Button>
@@ -172,7 +172,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                 onClick={() => {
                   handleMenuItemClick();
-                  window.open('https://seu-dominio.com/plataforma', '_blank');
+                  window.open('https://onvio.com.br', '_blank');
                 }}
               >
                 Plataforma do Cliente

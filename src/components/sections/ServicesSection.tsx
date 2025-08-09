@@ -77,8 +77,18 @@ export const ServicesSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
           {services.map((service, index) => {
             const IconComponent = service.icon;
+            const idMap: Record<string, string> = {
+              'Contabilidade Geral': 'service-contabil',
+              'Gestão Fiscal': 'service-fiscal',
+              'Consultoria Empresarial': 'service-consultoria',
+              'Compliance e Auditoria': 'service-auditoria',
+              'Departamento Pessoal': 'service-pessoal',
+              'Business Intelligence': 'service-bi',
+            };
+            const anchorId = idMap[service.title];
             return (
               <Card 
+                id={anchorId}
                 key={index}
                 className={`
                   card-professional group hover:scale-105 transition-all duration-300 relative

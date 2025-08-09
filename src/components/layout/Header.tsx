@@ -23,12 +23,12 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   ];
 
   const serviceItems = [
-    'Auditoria tributária',
-    'Consultoria tributária',
-    'Departamento Contábil',
-    'Departamento de pessoal',
-    'Departamento societário',
-    'Departamento Fiscal',
+    { label: 'Auditoria tributária', targetId: 'service-auditoria' },
+    { label: 'Consultoria tributária', targetId: 'service-consultoria' },
+    { label: 'Departamento Contábil', targetId: 'service-contabil' },
+    { label: 'Departamento de pessoal', targetId: 'service-pessoal' },
+    { label: 'Departamento societário', targetId: 'service-consultoria' },
+    { label: 'Departamento Fiscal', targetId: 'service-fiscal' },
   ];
 
   // Efeito para detectar scroll e adicionar sombra ao header
@@ -101,19 +101,19 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                     <ChevronDown className="w-4 h-4" aria-hidden="true" />
                   </button>
                   {/* Dropdown */}
-                  <div className="absolute left-0 mt-2 hidden group-hover:block z-[60] min-w-[220px] rounded-lg border border-border bg-background shadow-lg">
+                  <div className="absolute left-0 mt-2 hidden group-hover:block z-[60] min-w-[220px] rounded-lg border border-primary/30 bg-background shadow-lg">
                     <ul className="py-2">
                       {serviceItems.map((service) => (
-                        <li key={service}>
+                        <li key={service.targetId}>
                           <a
-                            href="#services"
+                            href={`#${service.targetId}`}
                             onClick={(e) => {
                               e.preventDefault();
-                              document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                              document.getElementById(service.targetId)?.scrollIntoView({ behavior: 'smooth' });
                             }}
                             className="block px-4 py-2 text-sm text-foreground hover:bg-secondary/60"
                           >
-                            {service}
+                            {service.label}
                           </a>
                         </li>
                       ))}
@@ -147,7 +147,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             <Button
               variant="default"
               className="bg-accent text-accent-foreground hover:bg-accent-hover"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('client-platform')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Abrir sua empresa
             </Button>
@@ -204,17 +204,17 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
               <p className="text-xs uppercase text-muted-foreground px-2">Serviços</p>
               <ul className="mt-1 space-y-1">
                 {serviceItems.map((service) => (
-                  <li key={service}>
+                  <li key={service.targetId}>
                     <a
-                      href="#services"
+                      href={`#${service.targetId}`}
                       onClick={(e) => {
                         e.preventDefault();
                         handleMenuItemClick();
-                        document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                        document.getElementById(service.targetId)?.scrollIntoView({ behavior: 'smooth' });
                       }}
                       className="block px-4 py-2 text-sm text-foreground/90 hover:text-foreground hover:bg-secondary rounded-md"
                     >
-                      {service}
+                      {service.label}
                     </a>
                   </li>
                 ))}
@@ -250,7 +250,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 className="w-full bg-accent text-accent-foreground hover:bg-accent-hover"
                 onClick={() => {
                   handleMenuItemClick();
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  document.getElementById('client-platform')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
                 Abrir sua empresa

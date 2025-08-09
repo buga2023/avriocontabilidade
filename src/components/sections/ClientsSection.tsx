@@ -1,47 +1,18 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
-import techCorpLogo from '@/assets/client-techcorp.png';
-import globalLogo from '@/assets/client-global.png';
-import innovateLogo from '@/assets/client-innovate.png';
-import primeLogo from '@/assets/client-prime.png';
-import apexLogo from '@/assets/client-apex.png';
-import summitLogo from '@/assets/client-summit.png';
 
 /**
  * Seção de Clientes Notórios
  */
 export const ClientsSection: React.FC = () => {
   const clients = [
-    {
-      name: 'TechCorp Solutions',
-      logo: techCorpLogo,
-      sector: 'Tecnologia'
-    },
-    {
-      name: 'Global Industries',
-      logo: globalLogo,
-      sector: 'Indústria'
-    },
-    {
-      name: 'Innovate Group',
-      logo: innovateLogo,
-      sector: 'Consultoria'
-    },
-    {
-      name: 'Prime Enterprises',
-      logo: primeLogo,
-      sector: 'Finanças'
-    },
-    {
-      name: 'Apex Holdings',
-      logo: apexLogo,
-      sector: 'Investimentos'
-    },
-    {
-      name: 'Summit Corporation',
-      logo: summitLogo,
-      sector: 'Imobiliário'
-    }
+    { name: 'Restaurante KI-MUKEKA', logo: '/lovable-uploads/c502354d-c018-4699-95c5-91007d7e5348.png', sector: 'Restaurante' },
+    { name: 'Maíra Gentil', logo: '/lovable-uploads/5152d090-9ea7-48f5-9a4a-a94b5382d367.png', sector: 'Fonoaudiologia' },
+    { name: 'VS Salão de Beleza', logo: '/lovable-uploads/9d07c6e3-8256-41b1-a7c0-a5f40a5889a6.png', sector: 'Beleza & Estética' },
+    { name: 'Daniela Cavalcanti - Clínica Médica', logo: '/lovable-uploads/4ccd0dea-a767-41b0-a579-fa890f3d9752.png', sector: 'Saúde' },
+    { name: 'Amazon Temper Salvador-Bahia', logo: '/lovable-uploads/a3a92e97-b955-469c-8dff-f333e6a00ab2.png', sector: 'Indústria' },
+    { name: 'KOG Construtora', logo: '/lovable-uploads/ecf746d9-cb9b-45bc-b99b-1fb3c28a58d9.png', sector: 'Construção' },
+    { name: 'DGino Beleza & Estética', logo: '/lovable-uploads/089c8321-e021-4e54-a360-2a47761f321e.png', sector: 'Beleza & Estética' },
   ];
 
   return (
@@ -71,6 +42,7 @@ export const ClientsSection: React.FC = () => {
                   <img
                     src={client.logo}
                     alt={`Logo ${client.name}`}
+                    loading="lazy"
                     className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                   />
                 </div>

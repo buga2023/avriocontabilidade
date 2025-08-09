@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 
@@ -20,6 +20,15 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     { id: 'home', label: 'Início', href: '#home' },
     { id: 'services', label: 'Serviços', href: '#services' },
     { id: 'contact', label: 'Contato', href: '#contact' }
+  ];
+
+  const serviceItems = [
+    'Auditoria tributária',
+    'Consultoria tributária',
+    'Departamento Contábil',
+    'Departamento de pessoal',
+    'Departamento societário',
+    'Departamento Fiscal',
   ];
 
   // Efeito para detectar scroll e adicionar sombra ao header
@@ -80,16 +89,49 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           {/* Menu Desktop */}
           <ul className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
-              <li key={item.id}>
-                <a
-                  href={item.href}
-                  className="text-foreground hover:text-primary transition-colors relative group py-2"
-                  aria-label={`Ir para ${item.label}`}
-                >
-                  {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                </a>
-              </li>
+              item.id === 'services' ? (
+                <li key={item.id} className="relative group">
+                  <button
+                    type="button"
+                    className="text-foreground hover:text-primary transition-colors inline-flex items-center gap-1 py-2"
+                    aria-haspopup="menu"
+                    aria-expanded="false"
+                  >
+                    {item.label}
+                    <ChevronDown className="w-4 h-4" aria-hidden="true" />
+                  </button>
+                  {/* Dropdown */}
+                  <div className="absolute left-0 mt-2 hidden group-hover:block z-[60] min-w-[220px] rounded-lg border border-border bg-background shadow-lg">
+                    <ul className="py-2">
+                      {serviceItems.map((service) => (
+                        <li key={service}>
+                          <a
+                            href="#services"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                            }}
+                            className="block px-4 py-2 text-sm text-foreground hover:bg-secondary/60"
+                          >
+                            {service}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+              ) : (
+                <li key={item.id}>
+                  <a
+                    href={item.href}
+                    className="text-foreground hover:text-primary transition-colors relative group py-2"
+                    aria-label={`Ir para ${item.label}`}
+                  >
+                    {item.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                  </a>
+                </li>
+              )
             ))}
           </ul>
 
@@ -101,6 +143,13 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
               onClick={() => window.open('https://onvio.com.br', '_blank')}
             >
               Plataforma do Cliente
+            </Button>
+            <Button
+              variant="default"
+              className="bg-accent text-accent-foreground hover:bg-accent-hover"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Abrir sua empresa
             </Button>
             <Button 
               variant="default"
@@ -151,8 +200,27 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 </li>
               ))}
             </ul>
+            <div className="mt-2 px-4">
+              <p className="text-xs uppercase text-muted-foreground px-2">Serviços</p>
+              <ul className="mt-1 space-y-1">
+                {serviceItems.map((service) => (
+                  <li key={service}>
+                    <a
+                      href="#services"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleMenuItemClick();
+                        document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="block px-4 py-2 text-sm text-foreground/90 hover:text-foreground hover:bg-secondary rounded-md"
+                    >
+                      {service}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
             <div className="mt-4 px-4 space-y-3">
-              {/* Mobile Contact Info */}
               <a 
                 href="tel:+557139011293" 
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-2"
@@ -176,6 +244,16 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 }}
               >
                 Plataforma do Cliente
+              </Button>
+              <Button 
+                variant="default"
+                className="w-full bg-accent text-accent-foreground hover:bg-accent-hover"
+                onClick={() => {
+                  handleMenuItemClick();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Abrir sua empresa
               </Button>
               <Button 
                 variant="default"

@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { useContactForm } from '@/hooks/useContactForm';
 import Map from '@/components/ui/Map';
-import specialistImage from '@/assets/specialist-contact.jpg';
+const specialistImage = '/lovable-uploads/04a01107-3769-4c11-900a-64d6b5ffd288.png';
 
 /**
  * Seção de Contato com formulário seguro e informações de contato

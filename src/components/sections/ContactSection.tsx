@@ -49,39 +49,41 @@ export const ContactSection: React.FC = () => {
   const clientReviews = [
     {
       id: 1,
-      name: 'Maria Silva',
-      company: 'TechCorp Soluções',
-      role: 'CEO',
+      name: 'Michel',
+      company: 'ME Logística',
+      role: 'Diretor',
       rating: 5,
-      comment: 'A Avrio transformou completamente nossa gestão contábil. Profissionais excepcionais e atendimento de primeira qualidade.',
-      avatar: 'MS'
+      comment: `Ser cliente da Ávrio Contabilidade tem sido uma experiência incrível para mim e para o meu negócio. Eles sempre estão prontos para responder às minhas dúvidas e me fornecer a orientação necessária. O que mais me impressiona é a dedicação da Ávrio em tornar a contabilidade uma experiência descomplicada e eficiente.`,
+      avatar: 'MI',
+      avatarUrl: '/lovable-uploads/d52417dc-4955-4c5d-9add-d6d231b30a52.png'
     },
     {
       id: 2,
-      name: 'João Santos',
-      company: 'Global Comércio',
-      role: 'Diretor Financeiro',
+      name: 'Tiago e Yan',
+      company: 'KOG Construtora',
+      role: 'Diretores',
       rating: 5,
-      comment: 'Excelente assessoria fiscal e tributária. Conseguimos reduzir significativamente nossos custos com impostos.',
-      avatar: 'JS'
+      comment: 'A Ávrio vem superando nossas expectativas e por isso indicamos a todos que nos perguntam.',
+      avatar: 'TY',
+      avatarUrl: '/lovable-uploads/74fdd057-010a-4aee-84f2-082a0266c775.png'
     },
     {
       id: 3,
-      name: 'Ana Costa',
-      company: 'Prime Consultoria',
-      role: 'Sócia',
+      name: 'Carla Souza',
+      company: 'Restaurante KI-MUKEKA',
+      role: 'Gerente',
       rating: 5,
-      comment: 'Equipe técnica muito competente e sempre disponível. Recomendo a todos os empresários.',
-      avatar: 'AC'
+      comment: 'Atendimento rápido e consultoria assertiva que impactou positivamente nossa operação.',
+      avatar: 'CS'
     },
     {
       id: 4,
-      name: 'Carlos Oliveira',
-      company: 'Innovate Solutions',
-      role: 'Gerente',
+      name: 'Renata Lima',
+      company: 'Amazon Temper Salvador-Bahia',
+      role: 'Coordenadora Financeira',
       rating: 5,
-      comment: 'Serviço de folha de pagamento impecável. Nunca tivemos problemas desde que começamos a trabalhar com a Avrio.',
-      avatar: 'CO'
+      comment: 'Excelente parceria na gestão fiscal e contábil, gerando economia e segurança.',
+      avatar: 'RL'
     }
   ];
 
@@ -410,7 +412,11 @@ export const ContactSection: React.FC = () => {
                 {/* Client Info */}
                 <div className="flex items-center gap-4">
                   <Avatar className="h-12 w-12">
-                    <AvatarImage src="" alt={review.name} />
+                    {review.avatarUrl ? (
+                      <AvatarImage src={review.avatarUrl} alt={review.name} />
+                    ) : (
+                      <AvatarImage src="" alt={review.name} />
+                    )}
                     <AvatarFallback className="bg-primary/10 text-primary font-semibold">
                       {review.avatar}
                     </AvatarFallback>

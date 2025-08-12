@@ -14,21 +14,23 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
-  // Menu items para navegação
   const menuItems = [
-    { id: 'home', label: 'Início', href: '#home' },
-    { id: 'services', label: 'Serviços', href: '#services' },
-    { id: 'contact', label: 'Contato', href: '#contact' }
+    { id: 'home', label: 'Início', href: '/' },
+    { id: 'mei-me', label: 'MEI para ME', href: '/mei-para-me' },
+    { id: 'services', label: 'Serviços', href: '#' },
+    { id: 'contact', label: 'Contato', href: '/contato' }
   ];
 
   const serviceItems = [
-    { label: 'Auditoria tributária', targetId: 'service-auditoria' },
-    { label: 'Consultoria tributária', targetId: 'service-consultoria' },
-    { label: 'Departamento Contábil', targetId: 'service-contabil' },
-    { label: 'Departamento de pessoal', targetId: 'service-pessoal' },
-    { label: 'Departamento societário', targetId: 'service-consultoria' },
-    { label: 'Departamento Fiscal', targetId: 'service-fiscal' },
+    { label: 'Auditoria tributária', href: '/servicos/auditoria-tributaria', targetId: 'service-auditoria' },
+    { label: 'Consultoria tributária', href: '/servicos/consultoria-tributaria', targetId: 'service-consultoria' },
+    { label: 'Departamento Contábil', href: '/servicos/departamento-contabil', targetId: 'service-contabil' },
+    { label: 'Departamento de pessoal', href: '/servicos/departamento-de-pessoal', targetId: 'service-pessoal' },
+    { label: 'Departamento societário', href: '/servicos/departamento-societario', targetId: 'service-consultoria' },
+    { label: 'Departamento Fiscal', href: '/servicos/departamento-fiscal', targetId: 'service-fiscal' },
   ];
 
   // Efeito para detectar scroll e adicionar sombra ao header
@@ -75,9 +77,24 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         >
           {/* Esquerda: Logo + Menu */}
           <div className="flex items-center gap-6">
+            {/* Menu Hambúrguer (Mobile à esquerda) */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
+              aria-controls="mobile-menu"
+              aria-expanded={isMenuOpen}
+              aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6" aria-hidden="true" />
+              ) : (
+                <Menu className="w-6 h-6" aria-hidden="true" />
+              )}
+            </button>
+
             {/* Logo */}
             <a 
-              href="#home" 
+              href="/" 
               className="flex items-center gap-2 text-xl sm:text-2xl lg:text-3xl font-bold text-primary hover:text-primary/90 transition-colors"
               aria-label="Avrio Contabilidade - Página inicial"
             >
@@ -92,28 +109,46 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             <ul className="hidden md:flex items-center gap-6">
               {menuItems.map((item) => (
                 item.id === 'services' ? (
-                  <li key={item.id} className="relative group">
+                  <li 
+                    key={item.id} 
+                    className="relative group"
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}
+                    onFocusCapture={() => setServicesOpen(true)}
+                    onBlurCapture={() => setServicesOpen(false)}
+                  >
                     <button
                       type="button"
-                      className="text-foreground hover:text-primary transition-colors inline-flex items-center gap-1 py-2"
+                      className="text-foreground hover:text-primary transition-colors inline-flex items-center gap-1 py-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background rounded-md"
                       aria-haspopup="menu"
-                      aria-expanded="false"
+                      aria-expanded={servicesOpen}
+                      aria-controls="services-menu"
                     >
                       {item.label}
-                      <ChevronDown className="w-4 h-4" aria-hidden="true" />
+                      <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
                     </button>
                     {/* Dropdown */}
-                    <div className="absolute left-0 mt-2 hidden group-hover:block z-[60] min-w-[240px] rounded-lg border border-primary/25 bg-background shadow-lg">
+                    <div
+                      id="services-menu"
+                      className={`${servicesOpen ? 'block' : 'hidden'} group-hover:block group-focus-within:block absolute left-0 mt-2 z-[60] min-w-[240px] rounded-lg border border-primary/20 bg-background shadow-lg`}
+                      role="menu"
+                    >
                       <ul className="py-2">
                         {serviceItems.map((service) => (
                           <li key={service.targetId}>
                             <a
-                              href={`#${service.targetId}`}
+                              href={service.href}
                               onClick={(e) => {
                                 e.preventDefault();
-                                document.getElementById(service.targetId)?.scrollIntoView({ behavior: 'smooth' });
+                                const el = service.targetId ? document.getElementById(service.targetId) : null;
+                                if (el) {
+                                  el.scrollIntoView({ behavior: 'smooth' });
+                                } else {
+                                  window.location.href = service.href;
+                                }
                               }}
-                              className="block px-4 py-2 text-sm text-foreground hover:bg-secondary/60"
+                              className="block px-4 py-2.5 text-sm text-foreground hover:bg-secondary/60"
+                              role="menuitem"
                             >
                               {service.label}
                             </a>
@@ -126,11 +161,18 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                   <li key={item.id}>
                     <a
                       href={item.href}
-                      className="text-foreground hover:text-primary transition-colors relative group py-2"
+                      onClick={(e) => {
+                        if (item.id === 'home' || item.id === 'contact') {
+                          e.preventDefault();
+                          const targetId = item.id === 'home' ? 'home' : 'contact';
+                          document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                      className="text-foreground hover:text-primary transition-colors relative group py-2.5"
                       aria-label={`Ir para ${item.label}`}
                     >
                       {item.label}
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                      <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-primary transition-all duration-300 group-hover:w-full" />
                     </a>
                   </li>
                 )
@@ -171,20 +213,6 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
               </Button>
             </div>
 
-            {/* Menu Toggle Button Mobile */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
-              aria-controls="mobile-menu"
-              aria-expanded={isMenuOpen}
-              aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
-            >
-              {isMenuOpen ? (
-                <X className="w-6 h-6" aria-hidden="true" />
-              ) : (
-                <Menu className="w-6 h-6" aria-hidden="true" />
-              )}
-            </button>
           </div>
         </nav>
 
@@ -199,11 +227,20 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         >
           <div className="py-4 border-t border-border">
             <ul className="space-y-2">
-              {menuItems.map((item) => (
+              {menuItems.filter(mi => mi.id !== 'services').map((item) => (
                 <li key={item.id}>
                   <a
                     href={item.href}
-                    onClick={handleMenuItemClick}
+                    onClick={(e) => {
+                      if (item.id === 'home' || item.id === 'contact') {
+                        e.preventDefault();
+                        handleMenuItemClick();
+                        const targetId = item.id === 'home' ? 'home' : 'contact';
+                        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                      } else {
+                        handleMenuItemClick();
+                      }
+                    }}
                     className="block px-4 py-3 text-foreground hover:text-primary hover:bg-secondary rounded-lg transition-all"
                     aria-label={`Ir para ${item.label}`}
                   >
@@ -211,27 +248,45 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                   </a>
                 </li>
               ))}
+              {/* Serviços - lista dobrável */}
+              <li>
+                <button
+                  type="button"
+                  className="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-secondary text-foreground"
+                  aria-expanded={mobileServicesOpen}
+                  aria-controls="mobile-services-menu"
+                  onClick={() => setMobileServicesOpen((v) => !v)}
+                >
+                  <span>Serviços</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <ul
+                  id="mobile-services-menu"
+                  className={`overflow-hidden transition-all ${mobileServicesOpen ? 'max-h-96 mt-1' : 'max-h-0'} space-y-1`}
+                >
+                  {serviceItems.map((service) => (
+                    <li key={service.targetId}>
+                      <a
+                        href={service.href}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleMenuItemClick();
+                          const el = service.targetId ? document.getElementById(service.targetId) : null;
+                          if (el) {
+                            el.scrollIntoView({ behavior: 'smooth' });
+                          } else {
+                            window.location.href = service.href;
+                          }
+                        }}
+                        className="block px-6 py-2.5 text-sm text-foreground/90 hover:text-foreground hover:bg-secondary rounded-md"
+                      >
+                        {service.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
             </ul>
-            <div className="mt-2 px-4">
-              <p className="text-xs uppercase text-muted-foreground px-2">Serviços</p>
-              <ul className="mt-1 space-y-1">
-                {serviceItems.map((service) => (
-                  <li key={service.targetId}>
-                    <a
-                      href={`#${service.targetId}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleMenuItemClick();
-                        document.getElementById(service.targetId)?.scrollIntoView({ behavior: 'smooth' });
-                      }}
-                      className="block px-4 py-2 text-sm text-foreground/90 hover:text-foreground hover:bg-secondary rounded-md"
-                    >
-                      {service.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
             <div className="mt-4 px-4 space-y-3">
               <a 
                 href="tel:+557139011293" 

@@ -68,112 +68,124 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
       `}
       role="banner"
     >
-      <div className="container mx-auto px-4 lg:px-6">
+      <div className="container mx-auto max-w-[1200px] px-6">
         <nav 
-          className="flex items-center justify-between h-16 lg:h-20"
+          className="grid grid-cols-[max-content_1fr_max-content] items-center h-16 lg:h-20 gap-4"
           aria-label="Navegação principal"
         >
-          {/* Logo */}
-          <a 
-            href="#home" 
-            className="flex items-center gap-2 text-xl sm:text-2xl lg:text-3xl font-bold text-primary hover:text-primary-hover transition-colors"
-            aria-label="Avrio Contabilidade - Página inicial"
-          >
-            <img 
-              src="/lovable-uploads/911f61fb-5c56-4f0e-aa6b-f46e44c69724.png" 
-              alt="Logo Avrio Soluções Corporativas" 
-              className="h-12 sm:h-14 lg:h-16 w-auto"
-            />
-          </a>
-
-          {/* Menu Desktop */}
-          <ul className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item) => (
-              item.id === 'services' ? (
-                <li key={item.id} className="relative group">
-                  <button
-                    type="button"
-                    className="text-foreground hover:text-primary transition-colors inline-flex items-center gap-1 py-2"
-                    aria-haspopup="menu"
-                    aria-expanded="false"
-                  >
-                    {item.label}
-                    <ChevronDown className="w-4 h-4" aria-hidden="true" />
-                  </button>
-                  {/* Dropdown */}
-                  <div className="absolute left-0 mt-2 hidden group-hover:block z-[60] min-w-[220px] rounded-lg border border-primary/30 bg-background shadow-lg">
-                    <ul className="py-2">
-                      {serviceItems.map((service) => (
-                        <li key={service.targetId}>
-                          <a
-                            href={`#${service.targetId}`}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              document.getElementById(service.targetId)?.scrollIntoView({ behavior: 'smooth' });
-                            }}
-                            className="block px-4 py-2 text-sm text-foreground hover:bg-secondary/60"
-                          >
-                            {service.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </li>
-              ) : (
-                <li key={item.id}>
-                  <a
-                    href={item.href}
-                    className="text-foreground hover:text-primary transition-colors relative group py-2"
-                    aria-label={`Ir para ${item.label}`}
-                  >
-                    {item.label}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                  </a>
-                </li>
-              )
-            ))}
-          </ul>
-
-          {/* CTA Buttons Desktop */}
-          <div className="hidden md:flex items-center gap-3">
-            <Button 
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              onClick={() => window.open('https://onvio.com.br', '_blank')}
+          {/* Esquerda: Logo + Menu */}
+          <div className="flex items-center gap-6">
+            {/* Logo */}
+            <a 
+              href="#home" 
+              className="flex items-center gap-2 text-xl sm:text-2xl lg:text-3xl font-bold text-primary hover:text-primary/90 transition-colors"
+              aria-label="Avrio Contabilidade - Página inicial"
             >
-              Plataforma do Cliente
-            </Button>
+              <img 
+                src="/lovable-uploads/911f61fb-5c56-4f0e-aa6b-f46e44c69724.png" 
+                alt="Logo Avrio Soluções Corporativas" 
+                className="h-12 sm:h-14 lg:h-16 w-auto"
+              />
+            </a>
+
+            {/* Menu Desktop */}
+            <ul className="hidden md:flex items-center gap-6">
+              {menuItems.map((item) => (
+                item.id === 'services' ? (
+                  <li key={item.id} className="relative group">
+                    <button
+                      type="button"
+                      className="text-foreground hover:text-primary transition-colors inline-flex items-center gap-1 py-2"
+                      aria-haspopup="menu"
+                      aria-expanded="false"
+                    >
+                      {item.label}
+                      <ChevronDown className="w-4 h-4" aria-hidden="true" />
+                    </button>
+                    {/* Dropdown */}
+                    <div className="absolute left-0 mt-2 hidden group-hover:block z-[60] min-w-[240px] rounded-lg border border-primary/25 bg-background shadow-lg">
+                      <ul className="py-2">
+                        {serviceItems.map((service) => (
+                          <li key={service.targetId}>
+                            <a
+                              href={`#${service.targetId}`}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById(service.targetId)?.scrollIntoView({ behavior: 'smooth' });
+                              }}
+                              className="block px-4 py-2 text-sm text-foreground hover:bg-secondary/60"
+                            >
+                              {service.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                ) : (
+                  <li key={item.id}>
+                    <a
+                      href={item.href}
+                      className="text-foreground hover:text-primary transition-colors relative group py-2"
+                      aria-label={`Ir para ${item.label}`}
+                    >
+                      {item.label}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                    </a>
+                  </li>
+                )
+              ))}
+            </ul>
+          </div>
+
+          {/* Centro: CTA principal */}
+          <div className="justify-self-center">
             <Button
-              variant="default"
-              className="bg-accent text-accent-foreground hover:bg-accent-hover"
+              size="lg"
+              className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg transition-transform duration-200 hover:scale-[1.02]"
+              aria-label="Abrir sua empresa gratuitamente"
               onClick={() => document.getElementById('client-platform')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Abrir sua empresa
             </Button>
-            <Button 
-              variant="default"
-              className="btn-primary"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Fale Conosco
-            </Button>
           </div>
 
-          {/* Menu Toggle Button Mobile */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
-            aria-controls="mobile-menu"
-            aria-expanded={isMenuOpen}
-            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6" aria-hidden="true" />
-            ) : (
-              <Menu className="w-6 h-6" aria-hidden="true" />
-            )}
-          </button>
+          {/* Direita: Ações + Hambúrguer no mobile */}
+          <div className="flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-3">
+              <Button 
+                variant="outline"
+                className="border-primary/70 text-primary hover:bg-primary hover:text-primary-foreground"
+                onClick={() => window.open('https://onvio.com.br', '_blank')}
+                aria-label="Ir para a Plataforma do Cliente"
+              >
+                Plataforma do Cliente
+              </Button>
+              <Button 
+                variant="default"
+                className="btn-primary"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                aria-label="Fale Conosco"
+              >
+                Fale Conosco
+              </Button>
+            </div>
+
+            {/* Menu Toggle Button Mobile */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
+              aria-controls="mobile-menu"
+              aria-expanded={isMenuOpen}
+              aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6" aria-hidden="true" />
+              ) : (
+                <Menu className="w-6 h-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
         </nav>
 
         {/* Menu Mobile */}

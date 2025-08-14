@@ -95,7 +95,7 @@ export const BusinessServicesSection: React.FC = () => {
                   {service.featured && (
                     <div className="mt-4">
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
-                        ⭐ Destaque
+                        Destaque
                       </span>
                     </div>
                   )}
@@ -103,12 +103,6 @@ export const BusinessServicesSection: React.FC = () => {
               </Card>
             );
           })}
-        </div>
-
-        <div className="text-center mt-12">
-          <p className="text-primary font-medium bg-primary/10 inline-block px-6 py-2 rounded-full border border-primary/20">
-            📱 Clique nos cards para mais informações via WhatsApp
-          </p>
         </div>
       </div>
     </section>

@@ -44,11 +44,8 @@ export const BusinessServicesSection: React.FC = () => {
       )}`;
       window.open(whatsappUrl, '_blank');
     } else if (serviceId === 'mei-para-me') {
-      // WhatsApp link para MEI para ME
-      const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(
-        'Olá! Gostaria de saber mais sobre a migração de MEI para ME.'
-      )}`;
-      window.open(whatsappUrl, '_blank');
+      // Scroll para a seção MEI para ME
+      document.getElementById('mei-para-me')?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

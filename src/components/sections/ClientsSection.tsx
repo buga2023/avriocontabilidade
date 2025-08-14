@@ -12,7 +12,6 @@ export const ClientsSection: React.FC = () => {
     { name: 'Daniela Cavalcanti - Clínica Médica', logo: '/lovable-uploads/4ccd0dea-a767-41b0-a579-fa890f3d9752.png', sector: 'Saúde' },
     { name: 'Amazon Temper Salvador-Bahia', logo: '/lovable-uploads/a3a92e97-b955-469c-8dff-f333e6a00ab2.png', sector: 'Indústria' },
     { name: 'KOG Construtora', logo: '/lovable-uploads/ecf746d9-cb9b-45bc-b99b-1fb3c28a58d9.png', sector: 'Construção' },
-    { name: 'DGino Beleza & Estética', logo: '/lovable-uploads/089c8321-e021-4e54-a360-2a47761f321e.png', sector: 'Beleza & Estética' },
   ];
 
   return (

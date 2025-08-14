@@ -411,15 +411,18 @@ export const ContactSection: React.FC = () => {
 
                 {/* Client Info */}
                 <div className="flex items-center gap-4">
-                  <Avatar className="h-12 w-12">
+                  <Avatar className="h-16 w-16 border-2 border-primary/20">
                     {review.avatarUrl ? (
-                      <AvatarImage src={review.avatarUrl} alt={review.name} />
+                      <AvatarImage 
+                        src={review.avatarUrl} 
+                        alt={review.name}
+                        className="object-cover object-center"
+                      />
                     ) : (
-                      <AvatarImage src="" alt={review.name} />
+                      <AvatarFallback className="bg-primary/10 text-primary font-semibold text-lg">
+                        {review.avatar}
+                      </AvatarFallback>
                     )}
-                    <AvatarFallback className="bg-primary/10 text-primary font-semibold">
-                      {review.avatar}
-                    </AvatarFallback>
                   </Avatar>
                   <div>
                     <div className="font-semibold text-foreground">{review.name}</div>

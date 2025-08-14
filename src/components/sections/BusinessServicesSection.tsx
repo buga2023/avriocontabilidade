@@ -91,14 +91,6 @@ export const BusinessServicesSection: React.FC = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
                     {service.description}
                   </p>
-                  
-                  {service.featured && (
-                    <div className="mt-4">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
-                        Destaque
-                      </span>
-                    </div>
-                  )}
                 </CardContent>
               </Card>
             );

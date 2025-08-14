@@ -45,9 +45,9 @@ export const ServicesSection: React.FC = () => {
     },
     {
       icon: BarChart3,
-      title: 'Business Intelligence',
-      description: 'Relatórios gerenciais, dashboards executivos e análise de indicadores financeiros.',
-      features: ['KPIs financeiros', 'Dashboards interativos', 'Análise preditiva'],
+      title: 'Departamento Societário',
+      description: 'Alterações contratuais, atas, registros em juntas comerciais e gestão societária.',
+      features: ['Alterações contratuais', 'Atas e registros', 'Gestão societária'],
       popular: false
     }
   ];
@@ -83,7 +83,7 @@ export const ServicesSection: React.FC = () => {
               'Consultoria Empresarial': 'service-consultoria',
               'Compliance e Auditoria': 'service-auditoria',
               'Departamento Pessoal': 'service-pessoal',
-              'Business Intelligence': 'service-bi',
+              'Departamento Societário': 'service-societario',
             };
             const anchorId = idMap[service.title];
             return (

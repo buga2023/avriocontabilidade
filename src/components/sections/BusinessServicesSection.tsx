@@ -19,14 +19,6 @@ const services = [
     featured: true
   },
   {
-    id: 'mei-para-me',
-    title: 'MEI para ME',
-    description: 'O negócio cresceu e empreendedor, você faturou mais do que tinha imaginado. A hora é boa, temos a solução para seu negócio.',
-    icon: Users,
-    color: 'bg-blue-500/10 text-blue-600',
-    featured: true
-  },
-  {
     id: 'alteracao',
     title: 'Alteração',
     description: 'Representa mudanças que devem ser feitas nos contratos social com o objetivo de alterar alguma cláusula ou razão da mudança na situação do negócio.',

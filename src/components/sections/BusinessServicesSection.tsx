@@ -24,6 +24,13 @@ const services = [
     description: 'Representa mudanças que devem ser feitas nos contratos social com o objetivo de alterar alguma cláusula ou razão da mudança na situação do negócio.',
     icon: RefreshCw,
     color: 'bg-orange-500/10 text-orange-600'
+  },
+  {
+    id: 'consultoria',
+    title: 'Consultoria',
+    description: 'Orientação especializada para tomada de decisões estratégicas, otimização fiscal e crescimento sustentável do seu negócio.',
+    icon: Users,
+    color: 'bg-blue-500/10 text-blue-600'
   }
 ];
 

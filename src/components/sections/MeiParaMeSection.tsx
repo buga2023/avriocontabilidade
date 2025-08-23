@@ -106,18 +106,18 @@ export const MeiParaMeSection: React.FC = () => {
             {process.map((step, index) => (
               <div key={index} className="relative">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mb-4">
+                  <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mb-4 shadow-lg">
                     {step.step}
                   </div>
-                  <h4 className="text-lg font-semibold text-foreground mb-2">
+                  <h4 className="text-lg font-semibold text-foreground mb-3">
                     {step.title}
                   </h4>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </div>
                 {index < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-full w-full">
+                  <div className="hidden lg:block absolute top-8 left-full w-8 -translate-x-4">
                     <ArrowRight className="w-6 h-6 text-primary mx-auto" />
                   </div>
                 )}

@@ -39,12 +39,12 @@ const ClientPlatformSection = () => {
               <div className="space-y-4">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                   Abra sua empresa
-                  <span className="block bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent">
+                  <span className="block text-primary font-extrabold">
                     100% grátis
                   </span>
                 </h2>
-                <div className="inline-flex items-center bg-gradient-to-r from-accent/10 to-primary/10 px-6 py-3 rounded-full border border-accent/20">
-                  <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent text-xl md:text-2xl font-bold">
+                <div className="inline-flex items-center bg-primary/10 px-6 py-3 rounded-full border border-primary/20">
+                  <span className="text-primary text-xl md:text-2xl font-bold">
                     Sem pagamento de honorários na abertura
                   </span>
                 </div>

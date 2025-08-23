@@ -130,7 +130,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                     {/* Dropdown */}
                     <div
                       id="services-menu"
-                      className={`${servicesOpen ? 'block' : 'hidden'} group-hover:block group-focus-within:block absolute left-0 mt-2 z-[60] min-w-[240px] rounded-lg border border-primary/20 bg-background shadow-lg`}
+                      className={`${servicesOpen ? 'block' : 'hidden'} group-hover:block group-focus-within:block absolute left-0 mt-2 z-[60] min-w-[240px] rounded-lg border border-border bg-background/95 backdrop-blur-sm shadow-lg`}
                       role="menu"
                     >
                       <ul className="py-2">
@@ -147,7 +147,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                                   window.location.href = service.href;
                                 }
                               }}
-                              className="block px-4 py-2.5 text-sm text-foreground hover:bg-secondary/60"
+                              className="block px-4 py-2.5 text-sm text-foreground hover:bg-secondary/80 hover:text-primary transition-colors"
                               role="menuitem"
                             >
                               {service.label}
@@ -284,7 +284,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                             window.location.href = service.href;
                           }
                         }}
-                        className="block px-6 py-2.5 text-sm text-foreground/90 hover:text-foreground hover:bg-secondary rounded-md"
+                        className="block px-6 py-2.5 text-sm text-foreground/90 hover:text-foreground hover:bg-secondary/80 rounded-md transition-colors"
                       >
                         {service.label}
                       </a>

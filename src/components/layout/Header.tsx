@@ -162,9 +162,12 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                     <a
                       href={item.href}
                       onClick={(e) => {
-                        if (item.id === 'home' || item.id === 'contact') {
+                        if (item.id === 'home' || item.id === 'contact' || item.id === 'mei-me') {
                           e.preventDefault();
-                          const targetId = item.id === 'home' ? 'home' : 'contact';
+                          let targetId = '';
+                          if (item.id === 'home') targetId = 'home';
+                          else if (item.id === 'contact') targetId = 'contact';
+                          else if (item.id === 'mei-me') targetId = 'mei-para-me';
                           document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
                         }
                       }}
@@ -232,10 +235,13 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                   <a
                     href={item.href}
                     onClick={(e) => {
-                      if (item.id === 'home' || item.id === 'contact') {
+                      if (item.id === 'home' || item.id === 'contact' || item.id === 'mei-me') {
                         e.preventDefault();
                         handleMenuItemClick();
-                        const targetId = item.id === 'home' ? 'home' : 'contact';
+                        let targetId = '';
+                        if (item.id === 'home') targetId = 'home';
+                        else if (item.id === 'contact') targetId = 'contact';
+                        else if (item.id === 'mei-me') targetId = 'mei-para-me';
                         document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
                       } else {
                         handleMenuItemClick();

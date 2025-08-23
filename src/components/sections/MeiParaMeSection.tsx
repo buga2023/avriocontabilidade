@@ -102,11 +102,11 @@ export const MeiParaMeSection: React.FC = () => {
           <h3 className="text-2xl font-bold text-center text-foreground mb-12">
             Como Funciona o Processo
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {process.map((step, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="relative flex flex-col items-center">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mb-4 shadow-lg">
+                  <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mb-4 shadow-lg relative z-10">
                     {step.step}
                   </div>
                   <h4 className="text-lg font-semibold text-foreground mb-3">
@@ -117,8 +117,8 @@ export const MeiParaMeSection: React.FC = () => {
                   </p>
                 </div>
                 {index < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-full w-8 -translate-x-4">
-                    <ArrowRight className="w-6 h-6 text-primary mx-auto" />
+                  <div className="hidden lg:block absolute top-8 -right-4 w-8 h-0.5 bg-primary z-0">
+                    <div className="absolute -right-1 -top-1 w-0 h-0 border-l-4 border-l-primary border-t-2 border-b-2 border-t-transparent border-b-transparent"></div>
                   </div>
                 )}
               </div>

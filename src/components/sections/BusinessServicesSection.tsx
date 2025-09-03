@@ -28,7 +28,7 @@ const services = [
   {
     id: 'consultoria',
     title: 'Consultoria',
-    description: 'Orientação especializada para tomada de decisões estratégicas, otimização fiscal e crescimento sustentável do seu negócio.',
+    description: 'Análises especializadas para decisões inteligentes, otimização tributária e resultados sólidos para o crescimento sustentável do seu negócio.',
     icon: Users,
     color: 'bg-blue-500/10 text-blue-600'
   }

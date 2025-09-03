@@ -16,22 +16,22 @@ export const AdvantagesSection: React.FC = () => {
       title: 'Quais as vantagens do Departamento Fiscal?',
       image: secaoFiscalImage,
       items: [
-        'Cumprimento das obrigações fiscais',
-        'Atrair compensação de impostos',
-        'Evitar erros e multas',
-        'Integração entre setores',
-        'Menos redundâncias em processos'
+        'Segurança no cumprimento das obrigações fiscais',
+        'Redução de Carga tributária em conformidade com a legislação',
+        'Prevenção de erros e multas',
+        'Maior alinhamento entre contabilidade e gestão',
+        'Processos otimizados'
       ]
     },
     {
       id: 'pessoas',
-      title: 'Quais as vantagens do Departamento de Pessoas?',
+      title: 'Quais as vantagens do Departamento Pessoal?',
       image: secaoPessoasImage,
       items: [
-        'Contratações mais acertadas',
-        'Aumento da produtividade e da motivação',
-        'Melhoria do ambiente de trabalho',
-        'Desenvolvimento dos colaboradores'
+        'Processos de admissão simplificados e seguros',
+        'Folha de pagamento precisa e confiável',
+        'Cumprimento rigoroso da legislação trabalhista',
+        'Gestão eficiente de férias, benefícios e rescisões'
       ]
     },
     {
@@ -39,10 +39,10 @@ export const AdvantagesSection: React.FC = () => {
       title: 'Quais as vantagens do Departamento Contábil?',
       image: secaoContabilImage,
       items: [
-        'Perfeita Situação Cadastral',
-        'Frequente Consultoria',
-        'Gestão do Seu Negócio',
-        'Formação de Preço'
+        'Demonstrações contábeis confiáveis',
+        'Transparência e credibilidade',
+        'Base sólida para decisões estratégicas',
+        'Cumprimento das exigências legais'
       ]
     }
   ];

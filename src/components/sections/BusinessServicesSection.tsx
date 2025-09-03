@@ -12,8 +12,8 @@ const services = [
   },
   {
     id: 'abertura',
-    title: 'Abertura',
-    description: 'A abertura de empresas serve para resolução de todas as etapas burocráticas do processo, permitindo você focar nas estratégias de crescimento do seu negócio.',
+    title: 'Constituição Empresarial',
+    description: 'Orientação completa para definir o melhor tipo societário, regime de tributação ideal e estrutura empresarial eficiente',
     icon: Building2,
     color: 'bg-emerald-500/10 text-emerald-600',
     featured: true

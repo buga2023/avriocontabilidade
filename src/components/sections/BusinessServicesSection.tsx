@@ -6,7 +6,7 @@ const services = [
   {
     id: 'endereco-fiscal',
     title: 'Endereço Fiscal',
-    description: 'Soluções de contabilidade constituídas por profissionais com larga experiência nas áreas de gestão empresarial.',
+    description: 'Sua sede em um endereço comercial confiável.',
     icon: FileText,
     color: 'bg-primary/10 text-primary'
   },

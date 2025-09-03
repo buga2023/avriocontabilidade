@@ -33,7 +33,7 @@ export const ServicesSection: React.FC = () => {
       icon: Shield,
       title: 'Compliance e Auditoria',
       description: 'Auditoria interna, compliance fiscal e adequação às normas regulamentares.',
-      features: ['Auditoria preventiva', 'LGPD compliance', 'Certificações ISO'],
+      features: ['Auditoria Preventiva', 'Controle total, riscos minimizados.', 'Conformidade que protege e fortalece seu negócio'],
       popular: false
     },
     {

@@ -7,7 +7,7 @@ const benefits = [
   {
     icon: TrendingUp,
     title: 'Maior Faturamento',
-    description: 'Possibilidade de faturar até R$ 4,8 milhões por ano, muito além do limite MEI.'
+    description: 'Possibilidade de faturar milhões por ano, muito além do limite MEI.'
   },
   {
     icon: Users,

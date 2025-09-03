@@ -17,7 +17,7 @@ const benefits = [
   {
     icon: Building2,
     title: 'Credibilidade',
-    description: 'Maior credibilidade no mercado e facilidade para conseguir empréstimos.'
+    description: 'Maior credibilidade no mercado e facilidade de obtenção de crédito e parcerias estratégicas.'
   },
   {
     icon: Calculator,

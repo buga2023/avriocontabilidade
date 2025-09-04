@@ -31,7 +31,7 @@ export const BusinessServicesSection: React.FC = () => {
   const handleServiceClick = (serviceId: string) => {
     if (serviceId === 'abertura') {
       // WhatsApp link para abertura gratuita
-      const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(
+      const whatsappUrl = `https://wa.me/5571390115577?text=${encodeURIComponent(
         'Olá! Gostaria de saber mais sobre a abertura gratuita de empresa.'
       )}`;
       window.open(whatsappUrl, '_blank');

@@ -4,7 +4,7 @@ import { ArrowRight, Building2 } from 'lucide-react';
 
 const ClientPlatformSection = () => {
   const handleAberturaGratisClick = () => {
-    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de abrir minha empresa gratuitamente com a Ávrio.', '_blank');
+    window.open('https://wa.me/5571390115577?text=Olá! Gostaria de abrir minha empresa gratuitamente com a Ávrio.', '_blank');
   };
 
   return (

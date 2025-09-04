@@ -152,7 +152,7 @@ export const ServicesSection: React.FC = () => {
           <Button 
             size="lg"
             className="btn-primary"
-            onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar uma consultoria sobre os serviços contábeis da Ávrio.', '_blank')}
+            onClick={() => window.open('https://wa.me/5571390115577?text=Olá! Gostaria de solicitar uma consultoria sobre os serviços contábeis da Ávrio.', '_blank')}
           >
             Solicitar Consultoria
           </Button>

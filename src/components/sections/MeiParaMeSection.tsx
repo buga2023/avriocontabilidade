@@ -51,7 +51,7 @@ const process = [
 
 export const MeiParaMeSection: React.FC = () => {
   const handleWhatsAppContact = () => {
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/5571390115577?text=${encodeURIComponent(
       'Olá! Gostaria de saber mais sobre a migração de MEI para ME.'
     )}`;
     window.open(whatsappUrl, '_blank');

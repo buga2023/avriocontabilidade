@@ -15,8 +15,8 @@ export const Footer: React.FC = () => {
     {
       icon: Phone,
       label: 'Telefone',
-      value: '(71) 3456-7890',
-      href: 'tel:+557134567890'
+      value: '(71) 3901-1577',
+      href: 'tel:+5571390115577'
     },
     {
       icon: Mail,

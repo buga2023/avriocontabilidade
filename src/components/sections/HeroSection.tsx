@@ -72,7 +72,7 @@ export const HeroSection: React.FC = () => {
               <Button
                 size="lg"
                 className="bg-accent hover:bg-accent-hover text-accent-foreground px-8 py-4 text-lg"
-                onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar uma proposta para os serviços contábeis da Ávrio.', '_blank')}
+                onClick={() => window.open('https://wa.me/5571390115577?text=Olá! Gostaria de solicitar uma proposta para os serviços contábeis da Ávrio.', '_blank')}
               >
                 Solicitar Proposta
                 <ArrowRight className="ml-2 w-5 h-5" aria-hidden="true" />
@@ -131,7 +131,7 @@ export const HeroSection: React.FC = () => {
             "logo": "https://avrio.com.br/logo.png",
             "contactPoint": {
               "@type": "ContactPoint",
-              "telephone": "+55-11-3456-7890",
+              "telephone": "+55-71-3901-1577",
               "contactType": "customer service",
               "areaServed": "BR",
               "availableLanguage": "Portuguese"

@@ -19,13 +19,6 @@ const services = [
     featured: true
   },
   {
-    id: 'alteracao',
-    title: 'Alteração',
-    description: 'Representa mudanças que devem ser feitas nos contratos social com o objetivo de alterar alguma cláusula ou razão da mudança na situação do negócio.',
-    icon: RefreshCw,
-    color: 'bg-orange-500/10 text-orange-600'
-  },
-  {
     id: 'consultoria',
     title: 'Consultoria',
     description: 'Análises especializadas para decisões inteligentes, otimização tributária e resultados sólidos para o crescimento sustentável do seu negócio.',

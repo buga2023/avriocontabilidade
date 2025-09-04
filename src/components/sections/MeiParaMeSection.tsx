@@ -132,7 +132,7 @@ export const MeiParaMeSection: React.FC = () => {
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <p className="text-foreground">Faturamento anual acima de R$ 81.000</p>
+                    <p className="text-foreground">Faturamento anual acima de R$ 81.000,00</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />

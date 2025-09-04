@@ -63,7 +63,7 @@ export const ContactSection: React.FC = () => {
       company: 'KOG Construtora',
       role: 'Diretores',
       rating: 5,
-      comment: 'A Ávrio vem superando nossas expectativas e por isso indicamos a todos que nos perguntam.',
+      comment: 'Migramos para a Ávrio em janeiro de 2022 e de lá cá recebemos todo o suporte necessário, inclusive, com ajustes no nosso enquadramento tributário que nos fez economizar em impostos. Toda a equipe é solícita e responde nossas consultas rapidamente, incluindo por ligação, o que é fundamental para nós. A Ávrio vem superando nossas expectativas e por isso indicamos a todos que nos perguntam.',
       avatar: 'TY',
       avatarUrl: '/lovable-uploads/74fdd057-010a-4aee-84f2-082a0266c775.png'
     },

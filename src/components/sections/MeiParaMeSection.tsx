@@ -184,7 +184,7 @@ export const MeiParaMeSection: React.FC = () => {
                 size="lg"
                 variant="outline"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-white text-white hover:bg-white hover:text-primary"
+                className="border-white/80 bg-white/10 text-white hover:bg-white hover:text-primary backdrop-blur-sm"
               >
                 Agendar Consulta
               </Button>

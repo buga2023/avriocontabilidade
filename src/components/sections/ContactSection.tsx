@@ -347,15 +347,6 @@ export const ContactSection: React.FC = () => {
                         <p className="text-sm text-muted-foreground">Acesso fácil pela Av. Tancredo Neves</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-xs font-bold text-primary">🚌</span>
-                      </div>
-                      <div>
-                        <p className="font-medium text-foreground">Transporte Público</p>
-                        <p className="text-sm text-muted-foreground">Várias linhas de ônibus passam pela região</p>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </CardContent>

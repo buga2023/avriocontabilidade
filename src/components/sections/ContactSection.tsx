@@ -33,8 +33,8 @@ export const ContactSection: React.FC = () => {
     {
       icon: MapPin,
       title: 'Endereço',
-      value: 'Caminho das Árvores',
-      description: 'Salvador, BA - CEP 41820-021',
+      value: 'Ferreira Ferraz Médico e Empresarial',
+      description: 'Caminho das Árvores, Salvador, BA - CEP 41820-021',
       href: 'https://maps.app.goo.gl/pFiEbJjWtDZcNHQt5'
     },
     {
@@ -273,6 +273,7 @@ export const ContactSection: React.FC = () => {
                 <div className="bg-accent/5 p-6 rounded-lg border border-accent/20">
                   <h3 className="font-semibold text-foreground mb-3 text-lg">Endereço Completo</h3>
                   <div className="space-y-2">
+                    <p className="text-foreground font-medium">Ferreira Ferraz Médico e Empresarial</p>
                     <p className="text-foreground">Caminho das Árvores, Salvador, BA</p>
                     <p className="text-muted-foreground">CEP: 41820-021</p>
                     <p className="text-muted-foreground">Região: Caminho das Árvores</p>

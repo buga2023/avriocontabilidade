@@ -7,6 +7,7 @@ interface MapProps {
 }
 
 const Map: React.FC<MapProps> = ({ className = '' }) => {
+  const buildingName = "Ferreira Ferraz Médico e Empresarial";
   const address = "Caminho das Árvores, Salvador, BA, 41820-021";
   const googleMapsUrl = "https://maps.app.goo.gl/pFiEbJjWtDZcNHQt5";
   const embedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.659!2d-38.4791!3d-12.9794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71604d0a9ca42a5%3A0xce9e4c85b5cfc706!2sCaminho%20das%20%C3%81rvores%2C%20Salvador%20-%20BA!5e0!3m2!1spt!2sbr!4v1700000000000!5m2!1spt!2sbr";
@@ -16,7 +17,8 @@ const Map: React.FC<MapProps> = ({ className = '' }) => {
       {/* Informações e Botões */}
       <div className="space-y-3">
         <div className="text-center">
-          <p className="font-medium text-foreground">{address}</p>
+          <p className="font-medium text-foreground">{buildingName}</p>
+          <p className="text-foreground">{address}</p>
           <p className="text-sm text-muted-foreground">Salvador, Bahia</p>
         </div>
         

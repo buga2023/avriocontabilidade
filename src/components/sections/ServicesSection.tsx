@@ -152,7 +152,14 @@ export const ServicesSection: React.FC = () => {
           <Button 
             size="lg"
             className="btn-primary"
-            onClick={() => window.open('https://wa.me/5571390115577?text=Olá! Gostaria de solicitar uma consultoria sobre os serviços contábeis da Ávrio.', '_blank')}
+            onClick={() => {
+              try {
+                const message = encodeURIComponent('Olá! Gostaria de solicitar uma consultoria sobre os serviços contábeis da Ávrio.');
+                window.open(`https://wa.me/5571390115577?text=${message}`, '_blank');
+              } catch (error) {
+                console.error('Erro ao abrir WhatsApp:', error);
+              }
+            }}
           >
             Solicitar Consultoria
           </Button>

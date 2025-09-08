@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 /**
  * Seção de Clientes Notórios
@@ -66,18 +67,26 @@ export const ClientsSection: React.FC = () => {
               Junte-se a essas empresas que confiam na Ávrio para gerenciar suas demandas contábeis e fiscais com excelência e eficiência.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => window.open('https://wa.me/5571390115577?text=Olá! Gostaria de solicitar uma proposta para os serviços contábeis da Ávrio.', '_blank')}
-                className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary-hover transition-colors font-medium"
+              <Button
+                onClick={() => {
+                  try {
+                    const message = encodeURIComponent('Olá! Gostaria de solicitar uma proposta para os serviços contábeis da Ávrio.');
+                    window.open(`https://wa.me/5571390115577?text=${message}`, '_blank');
+                  } catch (error) {
+                    console.error('Erro ao abrir WhatsApp:', error);
+                  }
+                }}
+                className="px-8 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-colors font-medium"
               >
                 Solicitar Proposta
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 border border-border text-foreground rounded-lg hover:bg-secondary transition-colors font-medium"
+                variant="outline"
+                className="px-8 py-3"
               >
                 Conhecer Serviços
-              </button>
+              </Button>
             </div>
           </div>
         </div>

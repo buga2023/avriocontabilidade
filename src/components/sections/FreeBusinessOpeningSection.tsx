@@ -7,7 +7,12 @@ import { ArrowRight, Building2 } from 'lucide-react';
  */
 export const FreeBusinessOpeningSection: React.FC = () => {
   const handleAberturaGratisClick = () => {
-    window.open('https://wa.me/5571390115577?text=Olá! Gostaria de abrir minha empresa gratuitamente com a Ávrio.', '_blank');
+    try {
+      const message = encodeURIComponent('Olá! Gostaria de abrir minha empresa gratuitamente com a Ávrio.');
+      window.open(`https://wa.me/5571390115577?text=${message}`, '_blank');
+    } catch (error) {
+      console.error('Erro ao abrir WhatsApp:', error);
+    }
   };
 
   return (

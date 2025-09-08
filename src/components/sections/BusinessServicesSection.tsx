@@ -30,11 +30,12 @@ const services = [
 export const BusinessServicesSection: React.FC = () => {
   const handleServiceClick = (serviceId: string) => {
     if (serviceId === 'abertura') {
-      // WhatsApp link para abertura gratuita
-      const whatsappUrl = `https://wa.me/5571390115577?text=${encodeURIComponent(
-        'Olá! Gostaria de saber mais sobre a abertura gratuita de empresa.'
-      )}`;
-      window.open(whatsappUrl, '_blank');
+      try {
+        const message = encodeURIComponent('Olá! Gostaria de saber mais sobre a abertura gratuita de empresa.');
+        window.open(`https://wa.me/5571390115577?text=${message}`, '_blank');
+      } catch (error) {
+        console.error('Erro ao abrir WhatsApp:', error);
+      }
     } else if (serviceId === 'mei-para-me') {
       // Scroll para a seção MEI para ME
       document.getElementById('mei-para-me')?.scrollIntoView({ behavior: 'smooth' });

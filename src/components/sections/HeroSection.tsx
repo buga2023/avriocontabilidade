@@ -71,8 +71,15 @@ export const HeroSection: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-12 px-4 sm:px-0 justify-center">
               <Button
                 size="lg"
-                className="bg-accent hover:bg-accent-hover text-accent-foreground px-8 py-4 text-lg"
-                onClick={() => window.open('https://wa.me/5571390115577?text=Olá! Gostaria de solicitar uma proposta para os serviços contábeis da Ávrio.', '_blank')}
+                className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 text-lg"
+                onClick={() => {
+                  try {
+                    const message = encodeURIComponent('Olá! Gostaria de solicitar uma proposta para os serviços contábeis da Ávrio.');
+                    window.open(`https://wa.me/5571390115577?text=${message}`, '_blank');
+                  } catch (error) {
+                    console.error('Erro ao abrir WhatsApp:', error);
+                  }
+                }}
               >
                 Solicitar Proposta
                 <ArrowRight className="ml-2 w-5 h-5" aria-hidden="true" />

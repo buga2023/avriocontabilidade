@@ -51,10 +51,12 @@ const process = [
 
 export const MeiParaMeSection: React.FC = () => {
   const handleWhatsAppContact = () => {
-    const whatsappUrl = `https://wa.me/5571390115577?text=${encodeURIComponent(
-      'Olá! Gostaria de saber mais sobre a migração de MEI para ME.'
-    )}`;
-    window.open(whatsappUrl, '_blank');
+    try {
+      const message = encodeURIComponent('Olá! Gostaria de saber mais sobre a migração de MEI para ME.');
+      window.open(`https://wa.me/5571390115577?text=${message}`, '_blank');
+    } catch (error) {
+      console.error('Erro ao abrir WhatsApp:', error);
+    }
   };
 
   return (

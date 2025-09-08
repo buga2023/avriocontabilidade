@@ -31,6 +31,9 @@ const MeiParaMeSection = React.lazy(() =>
 const TestimonialsSection = React.lazy(() => 
   import('@/components/sections/TestimonialsSection').then(module => ({ default: module.TestimonialsSection }))
 );
+const FreeBusinessOpeningSection = React.lazy(() => 
+  import('@/components/sections/FreeBusinessOpeningSection').then(module => ({ default: module.FreeBusinessOpeningSection }))
+);
 
 /**
  * Componente principal da aplicação - Avrio Contabilidade
@@ -87,6 +90,14 @@ const Index: React.FC = () => {
           </div>
         }>
           <HeroSection />
+        </Suspense>
+
+        <Suspense fallback={
+          <div className="py-20 flex justify-center">
+            <div className="w-8 h-8 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
+          </div>
+        }>
+          <FreeBusinessOpeningSection />
         </Suspense>
 
         <Suspense fallback={

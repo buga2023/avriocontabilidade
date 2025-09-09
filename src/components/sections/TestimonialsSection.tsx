@@ -30,11 +30,11 @@ export const TestimonialsSection: React.FC = () => {
     },
     {
       id: 3,
-      name: 'Carla Souza',
-      company: 'Restaurante KI-MUKEKA',
-      role: 'Gerente',
+      name: 'Cândida Santos',
+      company: 'Kimukeka Express',
+      role: 'Sócio-proprietário',
       rating: 5,
-      comment: 'Atendimento rápido e consultoria assertiva que impactou positivamente nossa operação.',
+      comment: 'Desde que abrimos nossas lojas do Kimukeka Express, a Avrio está com a gente. Mais do que uma empresa de contabilidade, eles se tornaram verdadeiros parceiros. Sempre atentos, modernos e muito competentes, nos passam segurança em cada etapa. Em contabilidade, parceria faz toda diferença e a Avrio entrega isso com excelência e cuidado.',
       avatar: 'CS'
     },
     {

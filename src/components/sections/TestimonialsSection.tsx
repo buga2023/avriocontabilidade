@@ -35,7 +35,8 @@ export const TestimonialsSection: React.FC = () => {
       role: 'Sócio-proprietário',
       rating: 5,
       comment: 'Desde que abrimos nossas lojas do Kimukeka Express, a Avrio está com a gente. Mais do que uma empresa de contabilidade, eles se tornaram verdadeiros parceiros. Sempre atentos, modernos e muito competentes, nos passam segurança em cada etapa. Em contabilidade, parceria faz toda diferença e a Avrio entrega isso com excelência e cuidado.',
-      avatar: 'CS'
+      avatar: 'CS',
+      avatarUrl: '/lovable-uploads/18e39902-f615-40c7-a0a9-9cc1ef722474.png'
     },
     {
       id: 4,

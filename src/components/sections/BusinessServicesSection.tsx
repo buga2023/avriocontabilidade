@@ -47,7 +47,7 @@ export const BusinessServicesSection: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Nossos Serviços
+            O seu Contador te acompanha em todas as fases da sua empresa
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Soluções contábeis inteligentes para empresas de todos os portes, com tecnologia de ponta e uma equipe preparada para transformar números em resultados.

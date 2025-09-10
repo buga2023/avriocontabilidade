@@ -61,12 +61,12 @@ export const ServicesSection: React.FC = () => {
       <div className="container mx-auto px-4 lg:px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 
-            id="services-title"
-            className="text-3xl lg:text-4xl font-bold text-foreground mb-4"
-          >
-            O seu Contador te acompanha em todas as fases da sua empresa
-          </h2>
+           <h2 
+             id="services-title"
+             className="text-3xl lg:text-4xl font-bold text-foreground mb-4"
+           >
+             O seu <span className="text-blue-600">Contador</span> te acompanha em todas as fases da sua empresa
+           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Soluções contábeis completas para empresas de todos os portes, 
             com tecnologia avançada e equipe especializada.

@@ -55,7 +55,7 @@ export const TestimonialsSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            O Que Nossos Clientes Dizem
+            O Que Nossos <span className="text-primary">Clientes</span> Dizem
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Veja os depoimentos de empresários que confiam na Avrio para suas necessidades contábeis.

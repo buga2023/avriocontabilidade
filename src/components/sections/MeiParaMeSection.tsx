@@ -177,7 +177,7 @@ export const MeiParaMeSection: React.FC = () => {
               <Button 
                 size="lg"
                 variant="secondary"
-                onClick={handleWhatsAppContact}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-white text-primary hover:bg-white/90"
               >
                 Falar com Especialista

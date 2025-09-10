@@ -30,7 +30,7 @@ export const TestimonialsSection: React.FC = () => {
     },
     {
       id: 3,
-      name: 'Cândida Santos',
+      name: 'Michel',
       company: 'Kimukeka Express',
       role: 'Sócia-proprietário do Kimukeka Express',
       rating: 5,

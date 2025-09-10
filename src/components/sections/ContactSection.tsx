@@ -293,22 +293,6 @@ export const ContactSection: React.FC = () => {
                     Ver Rotas
                   </Button>
                 </div>
-
-                {/* Informações de Transporte */}
-                <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
-                  <h3 className="font-semibold text-foreground mb-3 text-lg">Como Chegar</h3>
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-xs font-bold text-primary">🚗</span>
-                      </div>
-                      <div>
-                        <p className="font-medium text-foreground">De Carro</p>
-                        <p className="text-sm text-muted-foreground">Acesso fácil pela Av. Tancredo Neves</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </CardContent>
             </Card>
           </div>

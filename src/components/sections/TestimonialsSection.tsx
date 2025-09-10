@@ -10,13 +10,13 @@ export const TestimonialsSection: React.FC = () => {
   const clientReviews = [
     {
       id: 1,
-      name: 'Michel',
-      company: 'ME Logística',
-      role: 'Diretor',
+      name: 'Cândida Santos',
+      company: 'Kimukeka Express',
+      role: 'Sócia-proprietário do Kimukeka Express',
       rating: 5,
-      comment: `Ser cliente da Ávrio Contabilidade tem sido uma experiência incrível para mim e para o meu negócio. Eles sempre estão prontos para responder às minhas dúvidas e me fornecer a orientação necessária. O que mais me impressiona é a dedicação da Ávrio em tornar a contabilidade uma experiência descomplicada e eficiente.`,
-      avatar: 'MI',
-      avatarUrl: '/lovable-uploads/d52417dc-4955-4c5d-9add-d6d231b30a52.png'
+      comment: 'Desde que abrimos nossas lojas do Kimukeka Express, a Avrio está com a gente. Mais do que uma empresa de contabilidade, eles se tornaram verdadeiros parceiros. Sempre atentos, modernos e muito competentes, nos passam segurança em cada etapa. Em contabilidade, parceria faz toda diferença e a Avrio entrega isso com excelência e cuidado.',
+      avatar: 'CS',
+      avatarUrl: '/lovable-uploads/18e39902-f615-40c7-a0a9-9cc1ef722474.png'
     },
     {
       id: 2,
@@ -31,12 +31,12 @@ export const TestimonialsSection: React.FC = () => {
     {
       id: 3,
       name: 'Michel',
-      company: 'Kimukeka Express',
-      role: 'Sócia-proprietário do Kimukeka Express',
+      company: 'ME Logística',
+      role: 'Diretor',
       rating: 5,
-      comment: 'Desde que abrimos nossas lojas do Kimukeka Express, a Avrio está com a gente. Mais do que uma empresa de contabilidade, eles se tornaram verdadeiros parceiros. Sempre atentos, modernos e muito competentes, nos passam segurança em cada etapa. Em contabilidade, parceria faz toda diferença e a Avrio entrega isso com excelência e cuidado.',
-      avatar: 'CS',
-      avatarUrl: '/lovable-uploads/18e39902-f615-40c7-a0a9-9cc1ef722474.png'
+      comment: `Ser cliente da Ávrio Contabilidade tem sido uma experiência incrível para mim e para o meu negócio. Eles sempre estão prontos para responder às minhas dúvidas e me fornecer a orientação necessária. O que mais me impressiona é a dedicação da Ávrio em tornar a contabilidade uma experiência descomplicada e eficiente.`,
+      avatar: 'MI',
+      avatarUrl: '/lovable-uploads/d52417dc-4955-4c5d-9add-d6d231b30a52.png'
     },
     {
       id: 4,

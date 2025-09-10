@@ -20,9 +20,9 @@ export const ClientsSection: React.FC = () => {
       <div className="container mx-auto px-4 lg:px-6">
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Nossos Clientes Notórios
-          </h2>
+           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+             Nossos Clientes <span className="text-primary">Notórios</span>
+           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Temos o orgulho de atender empresas de diversos setores, oferecendo soluções contábeis personalizadas que impulsionam o crescimento e o sucesso dos nossos parceiros.
           </p>
